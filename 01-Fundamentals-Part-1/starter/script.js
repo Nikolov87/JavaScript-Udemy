@@ -45,7 +45,7 @@
 
 // console.log(typeof null);
 
-
+/*
 let age = 35;
 age = 36
 
@@ -58,3 +58,27 @@ job = "teacher";
 
 lastName = "Nikolov";
 console.log(lastName);
+*/
+
+const now = 2023;
+const agePetar = now - 1987;
+const ageSarah = now - 1990;
+console.log(agePetar, ageSarah);
+
+console.log(agePetar * 2, ageSarah / 2, 2 ** 3);
+
+// 2 ** 3 means 2 to the power of 3 = 2 * 2 * 2
+
+const firstName = 'Petar';
+const lastName = 'Nikolov';
+console.log(firstName + ' ' + lastName);
+
+// Assignment operators
+let x = 10 + 5; //15
+x += 10 // x = x + 10 = 25
+x *= 4 // x = x * 4 = 100
+x ++; // x = x + 1
+x --; // 100
+x --; // 99
+console.log(x);
+
