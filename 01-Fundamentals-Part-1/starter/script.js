@@ -105,7 +105,7 @@ console.log(x, y);
 const averageAge = (agePetar + ageSarah) / 2;
 console.log(agePetar, ageSarah, averageAge);*/
 
-
+ /*  // coding challenge 
 const massJohn = 92;
 const heightJohn = 1.95;
 const massMark = 78;
@@ -116,3 +116,27 @@ const bmiJohn = massJohn / (heightJohn * heightJohn);
 const markHeightBmi = bmiMark > bmiJohn;
 
 console.log(bmiMark, bmiJohn, markHeightBmi);
+*/
+
+const firstName = 'Petar';
+const job = 'junior';
+const birthYear = 1987;
+const year = 2023;
+
+const petar = "I'm " + firstName + ', a ' + (year -
+     birthYear) + ' years old ' + job + '!';
+     console.log(petar);
+
+     const petarNew = `I'm ${firstName}, a ${year - birthYear} year old. Working like a junior frontend developer`;
+     console.log(petarNew);
+
+     console.log(`Just a regular string.`);
+
+     console.log('String with \n\
+     multiple \n\
+     lkine');
+
+     console.log(`String
+     multiple
+     lines`);
+     
