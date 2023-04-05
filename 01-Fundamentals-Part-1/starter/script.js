@@ -118,6 +118,8 @@ const markHeightBmi = bmiMark > bmiJohn;
 console.log(bmiMark, bmiJohn, markHeightBmi);
 */
 
+
+/*
 const firstName = 'Petar';
 const job = 'junior';
 const birthYear = 1987;
@@ -139,4 +141,44 @@ const petar = "I'm " + firstName + ', a ' + (year -
      console.log(`String
      multiple
      lines`);
+     */
+
+     /* if / else statement */
+
+
+     /*
+     const age = 15;
+    
+
+     if(age >= 18) {
+        console.log('Sara can start driving license 🚗');
+     } else {
+        const yearsLeft = 18 - age;
+        console.log(`Send Sara go home dring milk and practice NFS and wait another ${yearsLeft} years`);
+     }
+
+
+     const birthYear = 2012;
+
+     let century;
+     if (birthYear <= 2000) {
+        century = 20;
+     } else {
+        century = 21;
+     }
+     console.log(century);
+     */
+
+     /* Challenge */
+
+     const BMIJohn = 28.3;
+     const BMIMark = 23.9;
+
+     if (BMIJohn >= BMIMark) {
+        console.log(`John's BMI is higher than Mark's`);
+     } else {
+        (BMIJohn >= BMIMark)
+        console.log(`Mark's BMI is higher than John's`);
+     }
+
      
