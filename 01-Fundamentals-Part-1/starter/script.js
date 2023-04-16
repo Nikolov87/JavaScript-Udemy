@@ -105,7 +105,7 @@ console.log(x, y);
 const averageAge = (agePetar + ageSarah) / 2;
 console.log(agePetar, ageSarah, averageAge);*/
 
- /*  // coding challenge 
+/*  // coding challenge 
 const massJohn = 92;
 const heightJohn = 1.95;
 const massMark = 78;
@@ -117,7 +117,6 @@ const markHeightBmi = bmiMark > bmiJohn;
 
 console.log(bmiMark, bmiJohn, markHeightBmi);
 */
-
 
 /*
 const firstName = 'Petar';
@@ -143,10 +142,9 @@ const petar = "I'm " + firstName + ', a ' + (year -
      lines`);
      */
 
-     /* if / else statement */
+/* if / else statement */
 
-
-     /*
+/*
      const age = 15;
     
 
@@ -169,8 +167,9 @@ const petar = "I'm " + firstName + ', a ' + (year -
      console.log(century);
      */
 
-     /* Challenge */
+/* Challenge */
 
+/*
      const BMIJohn = 28.3;
      const BMIMark = 23.9;
 
@@ -180,5 +179,49 @@ const petar = "I'm " + firstName + ', a ' + (year -
         (BMIJohn >= BMIMark)
         console.log(`Mark's BMI is higher than John's`);
      }
+     */
 
-     
+     /*
+     const massJohn = 78;
+     const heightJohn = 1.69;
+     const massMark = 92;
+     const heightMark = 1.95;
+
+
+// const massJohn = 95;
+// const heightJohn = 1.88;
+// const massMark = 85;
+// const heightMark = 1.76;
+
+const bmiMark = massMark / heightMark ** 2;
+const bmiJohn = massJohn / (heightJohn * heightJohn);
+console.log(bmiMark, bmiJohn);
+
+if (bmiMark > bmiJohn) {
+  console.log(`Mark's BMI (${bmiMark}) is higher than John's`);
+} else {
+  console.log(`John's BMI (${bmiJohn}) is higher than Mark's`);
+}
+*/
+
+
+/* 20. Type Conversion and Coercion  */
+const inputYear = '1987 ';
+console.log(Number(inputYear)); //converting strings to numbers
+console.log(Number(inputYear) + 18);
+
+console.log(Number('Petar'));
+console.log(typeof NaN);
+
+// converting strings to numbers
+console.log(String(35, 35));
+
+// type coercion
+console.log('I am ' + 35 + ' years ols');
+// console.log('I am ' + String(35) + ' years ols');
+console.log('35' - '10' - 3); //strings to numbers
+console.log('35' / '2');
+
+let n = '1' + 1;   // '1' + 1 = 11
+n = n - 1;   // 11 - 1 = 10
+console.log(n);   // output 11
