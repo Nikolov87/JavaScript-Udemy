@@ -387,3 +387,17 @@ console.log('Why not 23?'); */
 // } else {
 //     console.log('Not a valid day!');
 // }
+
+
+// 27. Statements and Expressions
+
+// 3 + 4 // this is an expression
+// 1987
+// true && false && !false // this is an statement
+
+// if (23 > 10) {
+//     const str = '23 is bigger';
+// }
+
+// const me = 'Petar' // me is expression
+// console.log(`I'm ${2023 - 1987} years old ${me}`);
