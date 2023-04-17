@@ -341,7 +341,7 @@ console.log('Why not 23?'); */
 // }
 
 
-// The switch Statement
+// The switch Statement//
 
 // const day = 'monday';
 
