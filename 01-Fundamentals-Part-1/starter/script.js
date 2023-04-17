@@ -339,3 +339,51 @@ console.log('Why not 23?'); */
 // } else {
 //     console.log('No one win 🤨');
 // }
+
+
+// The switch Statement
+
+// const day = 'monday';
+
+// switch (day) {
+//     case 'monday':
+//         console.log('Plan course structure');
+//         console.log('Go to coding meeting');
+//         break;
+//     case 'tuesday':
+//         console.log('Prepear theory video');
+//         break;
+//     case 'wednesday':
+//     case 'thursday':
+//         console.log('Write code examples');
+//         break;
+//     case 'friday':
+//         console.log('Record videos');
+//         break;
+//     case 'saturday':
+//     case 'sunday':
+//         console.log("Enjoy the weekend :D");
+//         break;
+//     default:
+//         console.log('Not a valid day!');
+// }
+
+// const day = 'monday';
+// if (day === 'monday') {
+//     console.log('Plan course structure');
+//     console.log('Go to coding meeting');
+// } else if (day === 'tuesday') {
+//     console.log('Prepear theory video');
+// } else if (day === 'wednesday') {
+//     console.log('Write code examples');
+// } else if (day === 'thursday') {
+//     console.log('Write code examples');
+// } else if (day === 'friday') {
+//     console.log('Record videos');
+// } else if (day === 'saturday') {
+//     console.log("Enjoy the weekend :D");
+// } else if (day === 'sunday') {
+//     console.log("Enjoy the weekend but no too much, Monday you are working :D");
+// } else {
+//     console.log('Not a valid day!');
+// }
