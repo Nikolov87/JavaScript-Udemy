@@ -255,7 +255,7 @@ if(height) {
 
 
 // 22. Equality Operators:==vs.===
-
+/*
 const age = '18';
 if (age === 18) 
 console.log('You just become an adult :D(string)');
@@ -278,4 +278,64 @@ if (favourite === 23) { // 22 === 23 -> FALSE
 }
 
 if (favourite != 23)
-console.log('Why not 23?');
+console.log('Why not 23?'); */
+
+
+/* 23. Booleon Logic */
+/* 24. Logical Operators */
+
+// const hasDriversLicense = true; // A
+// const hasGoodVision = true; //B
+
+// console.log(hasDriversLicense && hasGoodVision); // && AND 
+// console.log(hasDriversLicense || hasGoodVision); // || OR
+// console.log(!hasDriversLicense); // ! NOT
+
+// const shouldDrive = hasDriversLicense && hasGoodVision;
+
+// if (hasDriversLicense && hasGoodVision) {
+//     console.log('Sarah is able to drive!');
+// } else {
+//     console.log('Someone else should drive...');
+// }
+
+// const isTired = false; // C
+// console.log(hasDriversLicense && hasGoodVision && isTired);
+
+// if (hasDriversLicense && hasGoodVision && !isTired) {
+//     console.log('Sarah is able to drive!');
+// } else {
+//     console.log('Someone else should drive...');
+// }
+
+
+// Coding Challenge #3
+// Test data
+// Dolphins score 96, 108 and 89. 
+// Koalas score 88, 91 and 110
+
+// const scoreDolphins = (96 + 108 + 89) / 3;
+// const scoreKoalas = (88 + 91 + 110) / 3;
+// console.log(scoreDolphins, scoreKoalas);
+
+// if (scoreDolphins > scoreKoalas) {
+//     console.log('Dolphins win 🥳');
+// } else if (scoreDolphins < scoreKoalas) {
+//     console.log('Koalas win 🥳');
+// } else if (scoreDolphins===scoreKoalas) {
+//     console.log('Both win 🤪');
+// }
+
+// const scoreDolphins = (96 + 108 + 89) / 3;
+// const scoreKoalas = (198 + 110 + 110) / 3;
+// console.log(scoreDolphins, scoreKoalas);
+
+// if (scoreDolphins > scoreKoalas && scoreDolphins >= 100 ) {
+//     console.log('Dolphins win 🥳');
+// } else if (scoreDolphins < scoreKoalas && scoreKoalas >=100) { 
+//     console.log('Koalas win 🥳');
+// } else if (scoreDolphins===scoreKoalas && scoreDolphins >= 100 && scoreKoalas >=100) {
+//     console.log('Both win 🤪');
+// } else {
+//     console.log('No one win 🤨');
+// }
