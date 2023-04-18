@@ -401,3 +401,38 @@ console.log('Why not 23?'); */
 
 // const me = 'Petar' // me is expression
 // console.log(`I'm ${2023 - 1987} years old ${me}`);
+
+
+
+// 28. The Conditional(Ternary) Operator
+/*
+const age = 23;
+// age >=18 ? console.log('I like to drink wine🍷') :
+// console.log('I like to drink milk🥛');
+
+const drink = age >=18 ? 'wine 🍷 ' : 'milk 🥛 ';
+console.log(drink);
+
+let drink2;
+if (age >= 18) {
+    drink2 = 'wine 🍷 ';
+} else {
+    drink2 = 'milk 🥛 ';
+}
+console.log(drink2);
+
+console.log(`I line to drink ${age >=18 ? 'wine 🍷 ' : 'milk 🥛 '}`);
+*/
+ 
+// 29.Coding Challenge #4
+
+// const bill = 275;
+// const tip = bill <= 300 && bill >=50 ? bill * 0.15 :
+// bill * 0.2;
+
+// console.log(`The bill was ${bill}, the tip was ${tip} ,
+// and the total value ${bill + tip}`);
+
+
+// 30.Javascript Releases: ES5, ES6 + and ESNext
+
