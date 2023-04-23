@@ -48,18 +48,70 @@ console.log(appleOrangeJuice);
 // console.log(age1, age2);
 
 /* Arrow Functins*/
-const calcAge3 = birthYear => 2023 - birthYear;
-const age3 = calcAge3(1987);
-console.log(age3);
+// const calcAge3 = birthYear => 2023 - birthYear;
+// const age3 = calcAge3(1987);
+// console.log(age3);
+
+/* Retur the year when need to be reired */
+// const yearOfRetirement = (birthYear, firstName) => {
+//     const retirementAge = 65;
+//     const yearOfRetirement = birthYear + retirementAge;
+//     return `${firstName} will retire in ${yearOfRetirement} year`;
+// }
+// console.log(yearOfRetirement(1987, 'Petar'));
+// console.log(yearOfRetirement(1990, 'Sylwia'));
 
 
-const yearsUntilRetirement = (birthYear, firstName) => 
+/* will return the age for retirement */
+// const yearsUntilRetirement = (birthYear, firstName) => 
+// {
+//     const age = 2037 - birthYear;
+//     const retirement = 65 - age;
+//     //  return retirement;
+//     return `${firstName} retires in ${retirement} years`;
+// }
+
+// console.log(yearsUntilRetirement(1987, 'Petar'));
+// console.log(yearsUntilRetirement(1990, 'Sylwia'));
+
+
+/*  --> 36. Funcrions Calling Other Functions <-- */
+
+// const cutPieces = function (fruit) {
+//     return fruit * 4;
+// };
+
+// function fruitProcessor(apples, oranges) {
+
+//     const applePiecese = cutPieces(apples);
+//     const orangePieces = cutPieces(oranges)
+
+//     const juice = `Juice with ${applePiecese} piece of apples and ${orangePieces} pieces of orange.`;
+//     return juice;
+// }
+
+// console.log(fruitProcessor(2, 3));
+
+
+/* --> 37.Reviewing Functions <-- */
+
+const calcAge = function  (birthYear) {
+    return 2037 - birthYear;
+}  
+
+const yearsUntilRetirement = function (birthYear, firstName) 
 {
-    const age = 2037 - birthYear;
+    const age = calcAge(birthYear);
     const retirement = 65 - age;
-    //  return retirement;
-    return `${firstName} retires in ${retirement} years`;
-}
 
-console.log(yearsUntilRetirement(1987, 'Petar'));
-console.log(yearsUntilRetirement(1990, 'Sylwia'));
+    if(retirement > 0) {
+        console.log(`${firstName} retires in ${retirement} years`);
+        return retirement;
+    } else {
+        console.log(`${firstName} has already retired 🥳`);
+        return -1;
+    }
+} 
+
+console.log(yearsUntilRetirement(1987, `Petar`));
+console.log(yearsUntilRetirement(1950, `Mike`));
