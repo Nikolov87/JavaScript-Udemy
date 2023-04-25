@@ -95,23 +95,59 @@ console.log(appleOrangeJuice);
 
 /* --> 37.Reviewing Functions <-- */
 
-const calcAge = function  (birthYear) {
-    return 2037 - birthYear;
-}  
+// const calcAge = function  (birthYear) {
+//     return 2037 - birthYear;
+// }  
 
-const yearsUntilRetirement = function (birthYear, firstName) 
-{
-    const age = calcAge(birthYear);
-    const retirement = 65 - age;
+// const yearsUntilRetirement = function (birthYear, firstName) 
+// {
+//     const age = calcAge(birthYear);
+//     const retirement = 65 - age;
 
-    if(retirement > 0) {
-        console.log(`${firstName} retires in ${retirement} years`);
-        return retirement;
+//     if(retirement > 0) {
+//         console.log(`${firstName} retires in ${retirement} years`);
+//         return retirement;
+//     } else {
+//         console.log(`${firstName} has already retired 🥳`);
+//         return -1;
+//     }
+// } 
+
+// console.log(yearsUntilRetirement(1987, `Petar`));
+// console.log(yearsUntilRetirement(1950, `Mike`));
+
+
+/* --> Coing Challenge #1 <-- */
+// const calcAverage = (a, b, c) => (a + b + c) / 3;
+
+const calcAverage = (a, b, c) => {
+    let sum = a + b + c;
+    let avg = sum / 3;
+    return avg;
+}
+ console.log(calcAverage(4, 6, 8));
+
+ //test data 1:
+ let delphinsScore = calcAverage(44, 23, 71);
+ let koalasScore = calcAverage(65, 54, 49);
+ console.log(delphinsScore, koalasScore);
+
+ const checkWinner = function(delphinsAvg, koalasAvg) {
+    if (delphinsAvg >= 2 * koalasAvg) {
+    console.log('Delphins win 🥳'); 
+ } else if (koalasAvg >= 2 * delphinsAvg) {
+ console.log('Koalas win 🥳');  
     } else {
-        console.log(`${firstName} has already retired 🥳`);
-        return -1;
+        console.log('No one win!!!');
     }
-} 
+ }
 
-console.log(yearsUntilRetirement(1987, `Petar`));
-console.log(yearsUntilRetirement(1950, `Mike`));
+ checkWinner(delphinsScore, koalasScore);
+ checkWinner(444, 99)
+
+ //test data 2 
+
+ delphinsScore = calcAverage(85, 54, 41);
+ koalasScore = calcAverage(23, 34, 27);
+ console.log(delphinsScore, koalasScore);
+ checkWinner(delphinsScore, koalasScore);
