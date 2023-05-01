@@ -120,34 +120,56 @@ console.log(appleOrangeJuice);
 /* --> Coing Challenge #1 <-- */
 // const calcAverage = (a, b, c) => (a + b + c) / 3;
 
-const calcAverage = (a, b, c) => {
-    let sum = a + b + c;
-    let avg = sum / 3;
-    return avg;
-}
- console.log(calcAverage(4, 6, 8));
+// const calcAverage = (a, b, c) => {
+//     let sum = a + b + c;
+//     let avg = sum / 3;
+//     return avg;
+// }
+//  console.log(calcAverage(4, 6, 8));
 
- //test data 1:
- let delphinsScore = calcAverage(44, 23, 71);
- let koalasScore = calcAverage(65, 54, 49);
- console.log(delphinsScore, koalasScore);
+//  //test data 1:
+//  let delphinsScore = calcAverage(44, 23, 71);
+//  let koalasScore = calcAverage(65, 54, 49);
+//  console.log(delphinsScore, koalasScore);
 
- const checkWinner = function(delphinsAvg, koalasAvg) {
-    if (delphinsAvg >= 2 * koalasAvg) {
-    console.log('Delphins win 🥳'); 
- } else if (koalasAvg >= 2 * delphinsAvg) {
- console.log('Koalas win 🥳');  
-    } else {
-        console.log('No one win!!!');
-    }
- }
+//  const checkWinner = function(delphinsAvg, koalasAvg) {
+//     if (delphinsAvg >= 2 * koalasAvg) {
+//     console.log('Delphins win 🥳'); 
+//  } else if (koalasAvg >= 2 * delphinsAvg) {
+//  console.log('Koalas win 🥳');  
+//     } else {
+//         console.log('No one win!!!');
+//     }
+//  }
 
- checkWinner(delphinsScore, koalasScore);
- checkWinner(444, 99)
+//  checkWinner(delphinsScore, koalasScore);
+//  checkWinner(444, 99)
 
- //test data 2 
+//  //test data 2 
 
- delphinsScore = calcAverage(85, 54, 41);
- koalasScore = calcAverage(23, 34, 27);
- console.log(delphinsScore, koalasScore);
- checkWinner(delphinsScore, koalasScore);
+//  delphinsScore = calcAverage(85, 54, 41);
+//  koalasScore = calcAverage(23, 34, 27);
+//  console.log(delphinsScore, koalasScore);
+//  checkWinner(delphinsScore, koalasScore);
+ 
+
+
+/*  39.Introduction to Arrays  */
+
+const friend1 = 'Michael';
+const friend2 = 'Steven';
+const friend3 = 'Petar';
+
+const friends = ['Michael', 'Stiven', 'Petar']; 
+console.log(friends);
+  
+const years = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length); // length is a property  
+console.log(friends[friends.length - 1]); // getting index of the last element of the Array
+
+friends[2] = 'Jay';
+console.log(friends);
