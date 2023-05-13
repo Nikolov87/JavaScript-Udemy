@@ -156,20 +156,75 @@ console.log(appleOrangeJuice);
 
 /*  39.Introduction to Arrays  */
 
-const friend1 = 'Michael';
-const friend2 = 'Steven';
-const friend3 = 'Petar';
+// const friend1 = 'Michael';
+// const friend2 = 'Steven';
+// const friend3 = 'Petar';
+
+// const friends = ['Michael', 'Stiven', 'Petar']; 
+// console.log(friends);
+  
+// const years = new Array(1991, 1984, 2008, 2020);
+
+// console.log(friends[0]);
+// console.log(friends[2]);
+
+// console.log(friends.length); // length is a property  
+// console.log(friends[friends.length - 1]); // getting index of the last element of the Array
+
+// friends[2] = 'Jay';
+// console.log(friends);
+
+// const firstName = 'Petar'
+// const petar = [firstName, 'Nikolov', 2023 - 1987, 'student', friends];
+// console.log(petar);
+// console.log(petar.length);
+
+//Exercise
+// const calcAge = function  (birthYear) {
+//     return 2037 - birthYear;
+// }  
+// const years = [1990, 1970, 2002, 2010, 2018];
+
+// const age1 = calcAge(years[0]);
+// const age2 = calcAge(years[1]);
+// const age3 = calcAge(years[years.length - 1]);
+
+// console.log(age1, age2, age3);
+
+// const ages = [calcAge(years[0]), calcAge(years[1]),
+// calcAge([years.length - 1])];
+// console.log(ages);
+
+
+// Basic Array Operations(Methods)
 
 const friends = ['Michael', 'Stiven', 'Petar']; 
+// friends.push('Jay');    // .push adding new element to the array 'Jay'
+const newLength = friends.push('Jay')
 console.log(friends);
-  
-const years = new Array(1991, 1984, 2008, 2020);
+console.log(newLength);
 
-console.log(friends[0]);
-console.log(friends[2]);
+friends.unshift('John');
+console.log(friends);     // adding element in the begining in the array
 
-console.log(friends.length); // length is a property  
-console.log(friends[friends.length - 1]); // getting index of the last element of the Array
-
-friends[2] = 'Jay';
+friends.pop();  //removing the last element from the array
+// friends.pop();  // if you do it twice this remove last two elements from the array
+const popped = friends.pop(); // this will print the second element who is taken out from the array
+console.log(popped); 
 console.log(friends);
+
+friends.shift();  // this remove the first element from the array
+console.log(friends);
+
+// in which position is certain element
+console.log(friends.indexOf('Stiven'));  
+console.log(friends.indexOf('Maria'));  
+
+// if we right element who is not in the array we will recive -1
+
+console.log(friends.includes('Stiven'));  // printout true
+console.log(friends.includes('Maria'));  //trintout false
+
+if (friends.includes('Stiven')) {
+    console.log('You have a friend called Stiven');
+}
