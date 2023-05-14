@@ -196,35 +196,66 @@ console.log(appleOrangeJuice);
 // console.log(ages);
 
 
-// Basic Array Operations(Methods)
+// * 40. Basic Array Operations(Methods)
 
-const friends = ['Michael', 'Stiven', 'Petar']; 
-// friends.push('Jay');    // .push adding new element to the array 'Jay'
-const newLength = friends.push('Jay')
-console.log(friends);
-console.log(newLength);
+// const friends = ['Michael', 'Stiven', 'Petar']; 
+// // friends.push('Jay');    // .push adding new element to the array 'Jay'
+// const newLength = friends.push('Jay')
+// console.log(friends);
+// console.log(newLength);
 
-friends.unshift('John');
-console.log(friends);     // adding element in the begining in the array
+// friends.unshift('John');
+// console.log(friends);     // adding element in the begining in the array
 
-friends.pop();  //removing the last element from the array
-// friends.pop();  // if you do it twice this remove last two elements from the array
-const popped = friends.pop(); // this will print the second element who is taken out from the array
-console.log(popped); 
-console.log(friends);
+// friends.pop();  //removing the last element from the array
+// // friends.pop();  // if you do it twice this remove last two elements from the array
+// const popped = friends.pop(); // this will print the second element who is taken out from the array
+// console.log(popped); 
+// console.log(friends);
 
-friends.shift();  // this remove the first element from the array
-console.log(friends);
+// friends.shift();  // this remove the first element from the array
+// console.log(friends);
 
-// in which position is certain element
-console.log(friends.indexOf('Stiven'));  
-console.log(friends.indexOf('Maria'));  
+// // in which position is certain element
+// console.log(friends.indexOf('Stiven'));  
+// console.log(friends.indexOf('Maria'));  
 
-// if we right element who is not in the array we will recive -1
+// // if we right element who is not in the array we will recive -1
 
-console.log(friends.includes('Stiven'));  // printout true
-console.log(friends.includes('Maria'));  //trintout false
+// console.log(friends.includes('Stiven'));  // printout true
+// console.log(friends.includes('Maria'));  //trintout false
 
-if (friends.includes('Stiven')) {
-    console.log('You have a friend called Stiven');
+// if (friends.includes('Stiven')) {
+//     console.log('You have a friend called Stiven');
+// }
+
+// 41. Coding Challenge #2
+ 
+//// my solution
+// function calcTip(bill) {
+//     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// }
+
+// const bills = [125, 555, 44];
+// const tips = bills.map(calcTip);
+// const totals = bills.map((bill, index) => bill + tips[index]);
+
+// console.log(bills);
+// console.log(tips);
+// console.log(totals);
+
+
+//Jona's solution
+const calcTip = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 }
+// arrow function 
+// const calcTip = bill => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]),
+calcTip(bills[1]),
+calcTip(bills[2])];
+const totals = [bills[0] + tips[0]];
+
+console.log(bills, tips, totals);
