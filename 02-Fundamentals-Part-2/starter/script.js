@@ -263,22 +263,58 @@ console.log(appleOrangeJuice);
 
 // 42. Introduction to Objects
 
-const petarArray = [
-    'Petar',
-    'Nikolov',
-    2037 - 1987,
-    'Student',
-    ['Michael', 'Jonas', 'Steven']
-];
+// const petarArray = [
+//     'Petar',
+//     'Nikolov',
+//     2037 - 1987,
+//     'Student',
+//     ['Michael', 'Jonas', 'Steven']
+// ];
 
 // Object with 5 key value pairs // each key have value// 
 // Object name is petar wich 5 key properties wich diferent value
-const petar = {   
-    firstName: 'Petar',
-    lastName: 'Nikolov',
-    age: 2037 - 1987,
-    job: 'student',
-    friends: ['Michael', 'Jonas', 'Steven']
-};
-console.log(petarArray);
-console.log(petar);
+// const petar = {   
+//     firstName: 'Petar',
+//     lastName: 'Nikolov',
+//     age: 2037 - 1987,
+//     job: 'student',
+//     friends: ['Michael', 'Jonas', 'Steven']
+// };
+// console.log(petarArray);
+// console.log(petar);
+
+// 43.Dot vs. Bracket Notation
+
+// const petar = {   
+//     firstName: 'Petar',
+//     lastName: 'Nikolov',
+//     age: 2037 - 1987,
+//     job: 'Frontend Developer',
+//     friends: ['Michael', 'Jonas', 'Steven']
+// };
+
+// // console.log(petar);
+
+// console.log(petar.lastName);
+// console.log(petar['lastName']);
+
+// const nameKey = 'Name';
+// console.log(petar['first' + nameKey]);
+// console.log(petar['last' + nameKey]);
+
+// const interestedIn = prompt('What do you want to know about Petar? Choose between firstName, lastName, age, job, and friends');
+// console.log(petar[interestedIn]);
+
+// if (petar[interestedIn]) {
+//     console.log(petar[interestedIn]);
+// } else {
+//     console.log('Wrong request! What do you want to know about Petar? Choose between firstName, lastName, age, job, and friends');
+// }
+
+// petar.location = 'Bulgaria';
+// petar['facebook'] = '@PetarNikolov';
+// console.log(petar);
+
+// console.log(`${petar.firstName} has ${petar.friends.length} friends, and his best friend is called ${petar.friends[0]}`);
+
+
