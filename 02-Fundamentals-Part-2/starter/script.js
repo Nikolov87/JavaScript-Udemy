@@ -246,16 +246,39 @@ console.log(appleOrangeJuice);
 
 
 //Jona's solution
-const calcTip = function (bill) {
-    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-}
-// arrow function 
-// const calcTip = bill => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// const calcTip = function (bill) {
+//     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// }
+// // arrow function 
+// // const calcTip = bill => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 
-const bills = [125, 555, 44];
-const tips = [calcTip(bills[0]),
-calcTip(bills[1]),
-calcTip(bills[2])];
-const totals = [bills[0] + tips[0]];
+// const bills = [125, 555, 44];
+// const tips = [calcTip(bills[0]),
+// calcTip(bills[1]),
+// calcTip(bills[2])];
+// const totals = [bills[0] + tips[0]];
 
-console.log(bills, tips, totals);
+// console.log(bills, tips, totals);
+
+
+// 42. Introduction to Objects
+
+const petarArray = [
+    'Petar',
+    'Nikolov',
+    2037 - 1987,
+    'Student',
+    ['Michael', 'Jonas', 'Steven']
+];
+
+// Object with 5 key value pairs // each key have value// 
+// Object name is petar wich 5 key properties wich diferent value
+const petar = {   
+    firstName: 'Petar',
+    lastName: 'Nikolov',
+    age: 2037 - 1987,
+    job: 'student',
+    friends: ['Michael', 'Jonas', 'Steven']
+};
+console.log(petarArray);
+console.log(petar);
