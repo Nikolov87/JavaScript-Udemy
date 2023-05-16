@@ -318,3 +318,41 @@ console.log(appleOrangeJuice);
 // console.log(`${petar.firstName} has ${petar.friends.length} friends, and his best friend is called ${petar.friends[0]}`);
 
 
+// 44.Object Metods
+
+const petar = {   
+    firstName: 'Petar',
+    lastName: 'Nikolov',
+    birthYear: 1987,
+    job: 'Frontend Developer',
+    friends: ['Michael', 'Jonas', 'Steven'],
+    hasDriversLicense: false,
+
+    // calcAge: function (birthYear) {
+    //     return 2037 - birthYear;
+    // }
+
+    // calcAge: function () { 
+    //     // console.log(this);
+    //     return 2037 - this.birthYear;
+    // }
+
+    calcAge: function () { 
+        this.age = 2037 - this.birthYear
+        return this.age;
+    },
+
+    getSummary: function() {
+        return `${this.firstName} is ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
+    }
+}; 
+
+console.log(petar.calcAge());
+
+// console.log(petar.age); // output 50
+// console.log(petar.age);
+// console.log(petar.age);
+
+// Challenge
+// "Petar is 50-years old senior Frontend Developer, and hes a/no driver's license"
+console.log(petar.getSummary());
