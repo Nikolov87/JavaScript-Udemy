@@ -507,3 +507,52 @@ GOOD LUCK 😀
 // for (let rep = 1;  rep <= 30; rep = rep + 1) { //rep ++ means rep = rep + 1 
 //     console.log(`Lifting weights repetition 1 ${rep}`);
 // }
+
+// 47. Looping Arrays, Breaking and Continuing
+
+const petar = [
+        'Petar',
+        'Nikolov',
+        2037 - 1987,
+        'teacher',
+        ['Michael', 'Jonas', 'Steven'],
+        true
+    ];
+
+    const types = [];
+
+    // console.log(petarArray[0]);
+    // console.log(petarArray[1]);
+    // console.log(petarArray[4]);
+
+    for(let i = 0; i < petar.length; i++) { //is very importatnt to declarete i < 5, if not will print a lot :D
+        console.log(petar[i], typeof petar[i]);
+        //Filling types array
+        // types[i] = typeof petar[i];
+        types.push(typeof petar[i]); //second way to lop the array
+    }
+
+    console.log(types);
+
+    const years = [1991, 2007, 1969, 2020];
+    const ages = [];
+
+    for (let i = 0; i < years.length; i ++) {
+        ages.push(2037 - years[i]);
+    }
+    console.log(ages);
+
+    //continue and break 
+    console.log('--- ONLY STRINGS ---');
+    for(let i = 0; i < petar.length; i++) { //is very importatnt to declarete i < 5, if not will print a lot :D
+        if (typeof petar[i] !== 'string') continue;   
+        // !== this mean 'if not' and after that 'string' and the output is only strings
+        console.log(petar[i], typeof petar[i]);
+    }
+
+    console.log('--- BREAK WITH NUMBER ---');
+    for(let i = 0; i < petar.length; i++) { //is very importatnt to declarete i < 5, if not will print a lot :D
+        if (typeof petar[i] === 'number') break;   
+        // === this mean 'if is equal to a number' and after that 'BREAK WITH NUMBER' and the output is only NUMBER
+        console.log(petar[i], typeof petar[i]);
+    }
