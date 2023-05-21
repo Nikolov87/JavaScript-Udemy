@@ -560,27 +560,48 @@ GOOD LUCK 😀
 // 48. Looping Backwards and loops in Loops
 // Loop in the loop :D
 
-const petar = [
-        'Petar',
-        'Nikolov',
-        2037 - 1987,
-        'Frontend Developer',
-        ['Michael', 'Jonas', 'Steven'],
-        true
-    ];
-// Befor we print from 0, 1, 2, till 4
-//Now we will print from 4, 3, 2, till the last index 0
+// const petar = [
+//         'Petar',
+//         'Nikolov',
+//         2037 - 1987,
+//         'Frontend Developer',
+//         ['Michael', 'Jonas', 'Steven'],
+//         true
+//     ];
+// // Befor we print from 0, 1, 2, till 4
+// //Now we will print from 4, 3, 2, till the last index 0
 
-for(let i = petar.length - 1; i >= 0; i--) {
-    console.log(i, petar[i]);
+// for(let i = petar.length - 1; i >= 0; i--) {
+//     console.log(i, petar[i]);
+// }
+
+// //loop in loop 
+
+// for (let exercise = 1; exercise < 4; exercise++) {
+//     console.log(`--- Starting exercise ${exercise}`);
+
+//     for (let rep = 1; rep < 6; rep++) {
+//         console.log(`exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♀️`);
+//     }
+// }
+
+// 49. The while Loop
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+// }
+
+let rep = 1;
+while (rep <= 10) {
+    // console.log(`WHILE LOOP: Lifting weights repetition ${rep} 🏋️‍♀️`);
+    rep++;
 }
 
-//loop in loop 
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
 
-for (let exercise = 1; exercise < 4; exercise++) {
-    console.log(`--- Starting exercise ${exercise}`);
-
-    for (let rep = 1; rep < 6; rep++) {
-        console.log(`exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♀️`);
-    }
+while(dice !== 6) {
+    console.log(`You rolled a ${dice}`); 
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log('Loop is about to end...');
 }
