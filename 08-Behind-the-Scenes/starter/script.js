@@ -123,55 +123,77 @@
 //////////////////////
 // 98. Regular Function vs. Arrow Function
 
-const petar = {
-  // function expression
-  firstName: 'Petar',
-  year: 1987,
-  calcAge: function () {
-    // console.log(this);
-    console.log(2023 - this.year); // output 36
+// const petar = {
+//   // function expression
+//   firstName: 'Petar',
+//   year: 1987,
+//   calcAge: function () {
+//     // console.log(this);
+//     console.log(2023 - this.year); // output 36
 
-    /////// Solution #1
-    //     const self = this; // self or that
-    //     const isMillenial = function () {
-    //       console.log(this);
-    //       console.log(self.year >= 1981 && self.year <= 1996);
-    //     };
-    //     isMillenial();
-    //   },
+//     /////// Solution #1
+//     //     const self = this; // self or that
+//     //     const isMillenial = function () {
+//     //       console.log(this);
+//     //       console.log(self.year >= 1981 && self.year <= 1996);
+//     //     };
+//     //     isMillenial();
+//     //   },
 
-    //////// Solution #2
-    const isMillenial = () => {
-      console.log(this);
-      console.log(this.year >= 1981 && this.year <= 1996);
-    }; // this time .this keyword is woking because the parent scope petar
-    isMillenial();
-  },
+//     //////// Solution #2
+//     const isMillenial = () => {
+//       console.log(this);
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//     }; // this time .this keyword is woking because the parent scope petar
+//     isMillenial();
+//   },
 
-  greet: () => console.log(`Hey ${this.firstName}`),
-};
-petar.greet(); // output: Hey undefined
-// because .this is NOT WORKING with arrow funtion
-petar.calcAge();
-
-//   greet: function () {
-//     console.log(`Hey ${this.firstName}`);
-//   }, // output: Hey Petar
+//   greet: () => console.log(`Hey ${this.firstName}`),
 // };
-// petar.greet();
+// petar.greet(); // output: Hey undefined
+// // because .this is NOT WORKING with arrow funtion
+// petar.calcAge();
 
-//////////////////////////////////////
-// Arguments keyword
+// //   greet: function () {
+// //     console.log(`Hey ${this.firstName}`);
+// //   }, // output: Hey Petar
+// // };
+// // petar.greet();
 
-const addExpr = function (a, b) {
-  console.log(arguments);
-  return a + b; // arguments keyword is working in regular function
+// //////////////////////////////////////
+// // Arguments keyword
+
+// const addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b; // arguments keyword is working in regular function
+// };
+// addExpr(2, 5);
+// addExpr(2, 5, 8, 12);
+
+// var addArrow = (a, b) => {
+//   console.log(arguments);
+//   return a + b; // but is not working in arrow function
+// };
+// addArrow(2, 5, 8);
+/////////////////////////////////////////
+
+/////////////////////////////
+// 99.Primitives vs. Object(Primitives vs.Referens Types)
+let age = 35;
+let oldAge = age;
+age = 36;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'Petar',
+  age: 35,
 };
-addExpr(2, 5);
-addExpr(2, 5, 8, 12);
-
-var addArrow = (a, b) => {
-  console.log(arguments);
-  return a + b; // but is not working in arrow function
-};
-addArrow(2, 5, 8);
+const friend = me;
+friend.age = 27;
+console.log('Friend:', friend);
+console.log('Me:', me);
+//////// OUTPUT
+// Friend: { name: 'Petar', age: 27 }
+// Me: { name: 'Petar', age: 27 }
+/// PRIMITIVES: Number, String, Boolean, Undefined, Null, Symbol, Biglnt
