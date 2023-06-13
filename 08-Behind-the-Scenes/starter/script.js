@@ -178,23 +178,62 @@
 /////////////////////////////////////////
 
 /////////////////////////////
-// 99.Primitives vs. Object(Primitives vs.Referens Types)
-let age = 35;
-let oldAge = age;
-age = 36;
-console.log(age);
-console.log(oldAge);
+// // 99.Primitives vs. Object(Primitives vs.Referens Types)
+// let age = 35;
+// let oldAge = age;
+// age = 36;
+// console.log(age);
+// console.log(oldAge);
 
-const me = {
-  name: 'Petar',
-  age: 35,
-};
-const friend = me;
-friend.age = 27;
-console.log('Friend:', friend);
-console.log('Me:', me);
-//////// OUTPUT
-// Friend: { name: 'Petar', age: 27 }
-// Me: { name: 'Petar', age: 27 }
-/// PRIMITIVES: Number, String, Boolean, Undefined, Null, Symbol, Biglnt
-/////
+// const me = {
+//   name: 'Petar',
+//   age: 35,
+// };
+// const friend = me;
+// friend.age = 27;
+// console.log('Friend:', friend);
+// console.log('Me:', me);
+// //////// OUTPUT
+// // Friend: { name: 'Petar', age: 27 }
+// // Me: { name: 'Petar', age: 27 }
+// /// PRIMITIVES: Number, String, Boolean, Undefined, Null, Symbol, Biglnt
+// /////
+
+// 100. Primitives vs. Objects in Practice
+
+//Primitive types
+// let lastName = 'Williams';
+// let oldLastName = lastName; // On this line of code we resing
+// // oldLastName = 'Williams'
+// lastName = 'Davis';
+// console.log(lastName, oldLastName);
+
+// //Reference types
+// const jessica = {
+//   firstName: 'Jessica',
+//   lastName: 'Wolliams',
+//   age: 27,
+// };
+// const marriedJassica = jessica;
+// marriedJassica.lastName = 'Davis';
+// console.log(jessica);
+// console.log(marriedJassica);
+// // output
+// // { firstName: 'Jessica', lastName: 'Davis', age: 27 }
+// // { firstName: 'Jessica', lastName: 'Davis', age: 27 }
+
+// // Copuing objects
+// const jessica2 = {
+//   firstName: 'Jessica',
+//   lastName: 'Williams',
+//   age: 27,
+//   family: ['Alice', 'Bob'],
+// };
+
+// const jessicaCopy = Object.assign({}, jessica2);
+// jessicaCopy.lastName = 'Davis';
+
+// jessicaCopy.family.push('Mary', 'John');
+
+// console.log('Before marriage:', jessica2);
+// console.log('After marriage:', jessicaCopy);
