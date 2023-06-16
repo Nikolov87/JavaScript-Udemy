@@ -53,6 +53,42 @@ const restaurant = {
   },
 };
 
+///////////////////////////////////////////////////
+/*
+// 107.Short Circuiting ( && (AND) and || (OR) )
+console.log('---- OR ----');
+// You can use any data type,
+//They can return any data type and they do someting call SHORT-CIRCUITING
+console.log(3 || 'Petar'); // output 3 //SHORT-CIRCUITING means if
+// the first value is truly = true value will be
+// returned if not will be returned the secont value
+console.log('' || 'Petar'); // output: Petar
+console.log(true || 0); // output: true
+console.log(undefined || null); // output: null // null Because both off the values are false value
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null); // output: Hello
+
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10; // : means if not print 10
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log('---- AND ----');
+// && (AND) operator works exactly the opposite way of (OR) ||
+console.log(0 && 'Petar'); // output 0
+console.log(7 && 'Petar'); // output Petar
+// The (AND) && operator is ONLY TRUE if ALL the operatos are TRUE
+console.log('Hello' && 23 && null && 'Petar'); // output: null
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+*/
+
 /*
 ////////////////////////////////////
 //106. Rest Pattern and Parameters
