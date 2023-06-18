@@ -53,6 +53,15 @@ const restaurant = {
   },
 };
 
+// 108. The Nullish Coalescing Operator(??)
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+// Nullish value is only null AND undefined (NOT include 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10; // ?? works almost the same like || (OR) operator
+console.log(guestCorrect);
+console.log(guestCorrect);
+
 ///////////////////////////////////////////////////
 /*
 // 107.Short Circuiting ( && (AND) and || (OR) )
