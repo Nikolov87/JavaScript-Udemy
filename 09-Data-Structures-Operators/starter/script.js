@@ -52,6 +52,45 @@ const restaurant = {
   },
 };
 
+/////////////////////////////////////////
+// 116. Set
+
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet);
+
+console.log(new Set('Petar')); // output: Set(5) {'P', 'e', 't', 'a', 'r'}
+
+console.log(ordersSet.size); // output: 3 because are 3 diferent meals
+console.log(ordersSet.has('Pizza')); // output: true
+// .has method is similar to . include method in arrays
+console.log(ordersSet.has('Bread')); // output: false
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto'); // output: Set(3) {'Pasta', 'Pizza', 'Garlic Bread'}
+// Without 'Risotto'
+// ordersSet.clear(); // output: Set(0) {size: 0}
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order); // looping of sets
+// output: Pasta Pizza Garlic Bread
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+console.log(new Set('petarplamenovnikolov'));
+
 ////////////////////////////////////////////
 // 115.Coding Challenge #2.
 /* 
@@ -74,7 +113,7 @@ BONUS: Create an object called 'scorers' which contains the names of the players
 
 GOOD LUCK 😀
 */
-
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -136,6 +175,7 @@ for (const [team, odd] of Object.entries(game.odds)) {
 // Odd of victory Bayern Munich: 1.33
 // Odd of draw: 3.25
 // Odd of victory Borrussia Dortmund: 6.5
+*/
 
 /*
 /////////////////////////////
