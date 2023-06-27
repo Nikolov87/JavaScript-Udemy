@@ -51,6 +51,50 @@ const restaurant = {
     console.log(otherIntgredient);
   },
 };
+///////////////////////////////////////
+// 121. Working with STRINGS - PART 1
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]); // A
+console.log(plane[1]); // 3
+console.log(plane[2]); // 2
+console.log('B737'[0]); // B
+
+console.log(airline.length); // output 16
+console.log('B737'.length); // output 4
+
+console.log(airline.indexOf('r'));
+// the output is 6 because 'r' is on position 6
+// and strat counting from 0, not from 1. Counting the space as well
+console.log(airline.lastIndexOf('r'));
+// output 10 because giving you the last index 'r'
+console.log(airline.indexOf('Portugal')); // output 8
+
+console.log(airline.slice(4));
+//output Air Portugal because on position 4 start the word Air
+//and printout the rest as well
+console.log(airline.slice(4, 7)); // output only Air, because 7 is the space
+console.log(airline.slice(0, airline.indexOf(' '))); // output TAP,
+// only the first word from 0 till ' ' the space
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // output Portugal, of you not write +1
+// will be space before  Portugal
+console.log(airline.slice(-2)); // output last 2 elements: al
+console.log(airline.slice(1, -1)); // AP Air Portuga
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat😲');
+  else console.log('You got lucky 😀');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('Petar')); // [String: 'petar']
+console.log(typeof new String('Petar')); // object
 
 ///////////////////////////////////////
 // Coding Challenge #3
