@@ -52,7 +52,73 @@ const restaurant = {
   },
 };
 ///////////////////////////////////////
+// 122. Working with STRINGS - PART 2
+
+const airline = 'TAP Air Portugal';
+
+console.log(airline.toLocaleLowerCase()); // tap air portugal
+console.log(airline.toUpperCase()); // TAP AIR PORTUGAL
+
+// Fix capitalization in name
+const passenger = 'pEtAr'; //Petar
+const passengerLower = passenger.toLocaleLowerCase();
+const passengerCorrect =
+  passengerLower[0].toLocaleUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect); // output: Petar
+
+// Comaparing emails
+const email = 'hello@petar.io';
+const loginEmail = '  Hello@Petar.Io \n';
+
+const lowerEmail = loginEmail.toLocaleLowerCase();
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail); // hello@petar.io
+// OR
+const normalizedEmail = loginEmail.toLocaleLowerCase().trim();
+console.log(normalizedEmail); // hello@petar.io
+console.log(email === normalizedEmail); // true
+
+// Replacing parts of string
+
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS); // 288.97$
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate')); // All passengers come to boarding gate 23. Boarding door 23!
+console.log(announcement.replaceAll('door', 'gate')); // All passengers come to boarding gate 23. Boarding gate 23!
+
+// OR regular expressions
+console.log(announcement.replace(/door/g, 'gate')); // //this two and g after them(g = global)
+// output: All passengers come to boarding gate 23. Boarding gate 23!
+
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320')); // output: true
+console.log(plane.includes('Boeing')); // output: false
+console.log(plane.startsWith('Air')); // true
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the New Airbus family');
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLocaleLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+
+checkBaggage('I have laptop, some Food and pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and some gun for protection');
+
+///////////////////////////////////////
 // 121. Working with STRINGS - PART 1
+/*
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
@@ -95,6 +161,7 @@ checkMiddleSeat('3E');
 
 console.log(new String('Petar')); // [String: 'petar']
 console.log(typeof new String('Petar')); // object
+*/
 
 ///////////////////////////////////////
 // Coding Challenge #3
