@@ -51,9 +51,13 @@ const restaurant = {
     console.log(otherIntgredient);
   },
 };
+
+///////////////////////////////////
+// 119. Summary:Which Data Structure to Use?
+
 ///////////////////////////////////
 // 118.Maps:Iteration
-
+/*
 const question = new Map([
   ['question', 'What is the best programming language in the world?'],
   [1, 'C'],
@@ -86,6 +90,7 @@ console.log([...question]);
 console.log(question.entries());
 console.log([...question.key()]);
 console.log([...question.value()]);
+*/
 
 //////////////////////////////////
 // 117. Maps Fundamentals // Map is a data structure that we can use to map values to keys
