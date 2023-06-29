@@ -51,9 +51,61 @@ const restaurant = {
     console.log(otherIntgredient);
   },
 };
+
+////////////////////////////////////////
+// 123. Working with STRINGS - PART 3
+
+console.log('a+vary+nice+string'.split('+')); // (4) ['a', 'vary', 'nice', 'string']
+console.log('Petar Nikolov'.split(' ')); // [ 'Petar', 'Nikolov' ]
+
+const [firstName, lastName] = 'Petar Nikolov'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName); // Mr. Petar NIKOLOV
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica ann smith davis'); // Jessica Ann Smith Davis
+capitalizeName('petar nikolov'); // Petar Nikolov
+
+//Padding method
+const message = 'Go to gate 23!';
+console.log(message.padStart(20, '+').padEnd(30, '+'));
+console.log('Petar'.padStart(20, '+').padEnd(30, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+console.log(maskCreditCard(32489765791384719));
+console.log(maskCreditCard('87346873468734684368'));
+
+// Repeat method
+const message2 = 'Bad weather... All Departures Deplayed... ';
+console.log(message2.repeat(5)); // the message will be repeated 5 times
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'🛩️'.repeat(n)}`);
+};
+planesInLine(5);
+planesInLine(7);
+planesInLine(9);
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+
 ///////////////////////////////////////
 // 122. Working with STRINGS - PART 2
-
+/*
 const airline = 'TAP Air Portugal';
 
 console.log(airline.toLocaleLowerCase()); // tap air portugal
@@ -115,6 +167,7 @@ const checkBaggage = function (items) {
 checkBaggage('I have laptop, some Food and pocket Knife');
 checkBaggage('Socks and camera');
 checkBaggage('Got some snacks and some gun for protection');
+*/
 
 ///////////////////////////////////////
 // 121. Working with STRINGS - PART 1
