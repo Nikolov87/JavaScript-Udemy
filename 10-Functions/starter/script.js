@@ -1,8 +1,63 @@
 'use strict';
 
+////////////////////////////
+// 133. The call and apply Methods
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  // book: function() {}
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({
+      flight: `${this.iataCode}${flightNum}`,
+      name,
+    });
+  },
+};
+
+lufthansa.book(963, 'Petar Nikolov');
+lufthansa.book(369, 'Sylwia Pechta');
+console.log(lufthansa);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+// not working
+// book(23, 'Ali Baba');
+
+// Call method
+book.call(eurowings, 23, 'Gruh Prashchov');
+console.log(eurowings);
+
+book.call(lufthansa, 234, 'Hristo Botev');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 583, 'Baba Torbalan');
+
+// Apply method
+const flightData = [453, 'Tintiri Mintiri'];
+book.apply(swiss, flightData); // Tintiri Mintiri booked a seat on Swiss Air Lines flight LX453
+console.log(swiss);
+
+book.call(swiss, ...flightData); // Tintiri Mintiri booked a seat on Swiss Air Lines flight LX453
+
 //////////////////////////////
 // 132. Functions Returning Functions
-
+/*
 const greet = function (greeting) {
   return function (name) {
     console.log(`${greeting} ${name}`);
@@ -23,6 +78,7 @@ greeterHey('Sylwia'); // Hey Sylwia
 
 greet('Hello')('Petar'); //Hello Petar
 greetArr('Hi')('Petar'); //Hi Petar
+*/
 
 //////////////////////////////////////////////
 // 131.Functions Accepting Callback Functions
