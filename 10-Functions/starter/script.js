@@ -1,8 +1,32 @@
 'use strict';
 
-////////////////////////
-// 131.Functions Accepting Callback Functions
+//////////////////////////////
+// 132. Functions Returning Functions
 
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+// const greet = greeting =>
+//   function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+
+// OR
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+
+const greeterHey = greet('Hey');
+greeterHey('Petar'); //Hey Petar
+greeterHey('Sylwia'); // Hey Sylwia
+
+greet('Hello')('Petar'); //Hello Petar
+greetArr('Hi')('Petar'); //Hi Petar
+
+//////////////////////////////////////////////
+// 131.Functions Accepting Callback Functions
+/*
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
 };
@@ -30,6 +54,7 @@ const high5 = function () {
 document.body.addEventListener('click', high5);
 
 ['Jonas', 'Marta', 'Adam'].forEach(high5);
+*/
 
 /////////////////////////
 // 129. How Passing Arguments Works: Value vs. Reference
