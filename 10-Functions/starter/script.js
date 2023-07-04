@@ -33,7 +33,7 @@ BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 
 GOOD LUCK 😀
 */
-
+/*
 const poll = {
   question: 'What is your favourite programming language?',
   options: ['0:JavaScript', '1: Python', '2: Rust', '3: C++'],
@@ -76,7 +76,7 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
 
 //   [5, 2, 3]
 // BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
-
+*/
 ////
 
 ////////////////////////////
@@ -307,3 +307,30 @@ createBooking('LH123', 2, 700); // {flightNum: 'LH123', numPassengeres: 2, price
 createBooking('LH123', 3); // {flightNum: 'LH123', numPassengeres: 3, price: 600}
 createBooking('LH123', 5); // {flightNum: 'LH123', numPassengeres: 5, price: 1000}
 */
+
+///////////////////////////////
+// 136. Immediately Invoked Function Expression (IIFE)
+// Function who runs only ones and never again
+
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+(function () {
+  console.log('This will never run again');
+  const isPrivateData = 23;
+})(); // Immediately Invoked function expression
+
+// console.log(isPrivateData);
+// this not going to work because is defind in the scope, not in the global scope
+
+(() => console.log('This will ALSO never run again'))();
+
+{
+  const isPrivateData = 23;
+  var notPrivateData = 46;
+}
+// console.log(isPrivateData);
+console.log(notPrivateData);
+// this one will work because is decorate with VAR
