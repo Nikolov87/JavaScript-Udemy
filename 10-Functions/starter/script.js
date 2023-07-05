@@ -311,7 +311,7 @@ createBooking('LH123', 5); // {flightNum: 'LH123', numPassengeres: 5, price: 100
 ///////////////////////////////
 // 136. Immediately Invoked Function Expression (IIFE)
 // Function who runs only ones and never again
-
+/*
 const runOnce = function () {
   console.log('This will never run again');
 };
@@ -334,3 +334,40 @@ runOnce();
 // console.log(isPrivateData);
 console.log(notPrivateData);
 // this one will work because is decorate with VAR
+*/
+
+/////////////////
+// 137. Closures - Closure Look at Functions
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+booker();
+booker();
+booker();
+
+// Closure Summary
+// 👉 A closure is the closed-over variable environment of the execution content in which a
+// function was created, even after that execution context is gone;
+//      ↓ LESS FORMAL
+// 👉 A closure gives a function access to all varibles of its parent function, even after
+// parent function has returned. The function keeps a reference to its outer scope, which
+// preserves the scope chain throughout time.
+//      ↓ LESS RORMAL
+// 👉 A closure makes sure that a function doesn't loose connection to variables that existed
+// at the function's birth place;
+//                            🏃‍♂️      ⛓️            🏡           📆
+//                          ↗         ↑             ↑              ↖
+//                     Function   Connection  Parent scope   Variables
+// 👉 A closure is like a backpack that a function carries around wherever it goes. This
+// backpack has all the variables that were present in the environment where the function
+// was created
+
+console.dir(booker);
