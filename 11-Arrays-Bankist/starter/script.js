@@ -74,3 +74,39 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+// 142.Simple Array Methods
+//// .slice method
+// .slice(2) will start to extract everything after b, this mean will start from c till the end
+// .slice(2, 4) here the last parameter is 4 and is not included so the ouput is: (2) ['c', 'd']
+
+let arr = ['a', 'b', 'c', 'd', 'e'];
+console.log(arr.slice(2)); // (3) ['c', 'd', 'e']
+console.log(arr.slice(2, 4)); // (2) ['c', 'd']
+console.log(arr.slice(-2)); // (2) ['d', 'e']
+console.log(arr.slice(-1)); // ['e']
+console.log(arr.slice(1, -1)); // (3) ['b', 'c', 'd'] //From 1 till -1.
+// Without 0 and the last element
+console.log(arr.slice()); // (5) ['a', 'b', 'c', 'd', 'e']
+console.log([...arr]); // (5) ['a', 'b', 'c', 'd', 'e']
+
+// .splice method
+// console.log(arr.splice(2)); //(3) ['c', 'd', 'e']
+arr.splice(-1); // (4) ['a', 'b', 'c', 'd'] // deleted the lasr element 'e'
+arr.splice(1, 2); // (2) ['a', 'd'] // 'b' and 'c' are deleted
+console.log(arr); //(2) ['a', 'b'] in this case .splice delete ['c', 'd', 'e'] with arr.splice(2)
+
+// .reverse method
+arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['j', 'i', 'j', 'g', 'j'];
+console.log(arr2.reverse()); // ['j', 'g', 'j', 'i', 'j']
+console.log(arr2); // ['j', 'g', 'j', 'i', 'j'] after .reverse only arr2 the output
+// will be the new arr alerady reversed
+
+// .concat method
+const letters = arr.concat(arr2);
+console.log(letters);
+// the same result will be if you do
+console.log(...arr, ...arr2); // spread operator // a b c d e j g j i j
+
+//.join
+console.log(letters.join(' - ')); // a - b - c - d - e - j - g - j - i - j
