@@ -78,7 +78,7 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 //// .slice method
 // .slice(2) will start to extract everything after b, this mean will start from c till the end
 // .slice(2, 4) here the last parameter is 4 and is not included so the ouput is: (2) ['c', 'd']
-
+/*
 let arr = ['a', 'b', 'c', 'd', 'e'];
 console.log(arr.slice(2)); // (3) ['c', 'd', 'e']
 console.log(arr.slice(2, 4)); // (2) ['c', 'd']
@@ -110,3 +110,20 @@ console.log(...arr, ...arr2); // spread operator // a b c d e j g j i j
 
 //.join
 console.log(letters.join(' - ')); // a - b - c - d - e - j - g - j - i - j
+*/
+
+/////////////////////////
+// 143.The new .at Method
+
+const arr = [23, 11, 64];
+console.log(arr[0]); // 23
+console.log(arr.at(0)); // 23
+
+// Getting the last array element
+console.log(arr[arr.length - 1]); // 64
+// -1 Always geting the last element from the array
+console.log(arr.slice(-1)[0]); // 64
+console.log(arr.at(-1)); // 64
+
+console.log('petar'.at(0)); // p
+console.log('petar'.at(-1)); // r
