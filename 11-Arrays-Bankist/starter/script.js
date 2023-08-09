@@ -153,7 +153,7 @@ movements.forEach(function (mov, i, arr) { // callback function
 */
 
 // 🔴 145. forEach With Maps and Sets
-
+/*
 // Example for Map
 const currencies = new Map([
   ['USD', 'United States dollar'], // USD = key / 'United States dollar' = value
@@ -171,3 +171,5 @@ console.log(currenciesUnique); // Set(3) {'USD', 'GBP', 'EUR'}
 currenciesUnique.forEach(function (value, _, map) {
   console.log(`${value}: ${value}`);
 });
+*/
+// 🔴 146. PROJECTO:"Bankist"App
