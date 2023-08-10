@@ -297,7 +297,7 @@ console.log(movementsDescriptions);
 // 🔴 151. Computing Usernames => line 85
 
 // 🔴 152. The filter Method
-/*
+
 const deposits = movements.filter(function (mov, i, arr) {
   return mov > 0;
 });
@@ -321,4 +321,3 @@ console.log(depositsFor); // (5) [200, 450, 3000, 70, 1300]
 // OR Jona's solution
 const withdrawals = movements.filter(mov => mov < 0);
 console.log(withdrawals); // [-400, -650, -130]
-*/
