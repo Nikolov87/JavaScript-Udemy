@@ -95,7 +95,6 @@ const createUsernames = function (accs) {
 };
 
 createUsernames(accounts); // stw
-console.log(accounts);
 
 /////////////////////////////////////////
 
@@ -296,3 +295,30 @@ console.log(movementsDescriptions);
 */
 
 // 🔴 151. Computing Usernames => line 85
+
+// 🔴 152. The filter Method
+/*
+const deposits = movements.filter(function (mov, i, arr) {
+  return mov > 0;
+});
+console.log(movements);
+console.log(deposits); //(5) [200, 450, 3000, 70, 1300]
+
+// for of loop variant
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(movements);
+console.log(depositsFor); // (5) [200, 450, 3000, 70, 1300]
+
+// Withdrawal / only negative numbers
+// 😆 are you serius just turn > 0, to < 0 and you have only the negative numbers
+
+// const withdrawals = movements.filter(function (mov) {
+//   return mov < 0;
+// });
+// console.log(withdrawals); //[-400, -650, -130]
+
+// OR Jona's solution
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals); // [-400, -650, -130]
+*/
