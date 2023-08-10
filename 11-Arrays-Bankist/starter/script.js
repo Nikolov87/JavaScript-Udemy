@@ -6,7 +6,7 @@
 
 // Data
 /////////////////////////
-/*
+
 const account1 = {
   owner: 'Jonas Schmedtmann',
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
@@ -81,10 +81,24 @@ const displayMovements = function (movements) {
 };
 
 displayMovements(account1.movements);
-*/
+
+// from 🔴 151 Computing Usernames
+
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLocaleLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+
+createUsernames(accounts); // stw
+console.log(accounts);
+
 /////////////////////////////////////////
 
-/////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
 
@@ -94,7 +108,7 @@ displayMovements(account1.movements);
 //   ['GBP', 'Pound sterling'],
 // ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 // 🔴 142.Simple Array Methods
@@ -249,3 +263,36 @@ checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 */
 
 // 🔴 149.Data Transformations:map, filter, reduce.
+
+// 🔴 150.The map Method
+// Using data from line 10 till 97
+
+/*
+const eurToUsd = 1.1;
+
+// const movementUSD = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
+// this ⬆️ is the same like this ⬇️ one, but is one line of code with callback function
+
+const movementUSD = movements.map(mov => mov * eurToUsd);
+
+console.log(movements);
+console.log(movementUSD);
+
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+
+console.log(movementsUSDfor);
+
+const movementsDescriptions = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdraw'} ${Math.abs(
+      mov
+    )}`
+);
+
+console.log(movementsDescriptions);
+*/
+
+// 🔴 151. Computing Usernames => line 85
