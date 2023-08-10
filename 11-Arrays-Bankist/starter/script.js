@@ -82,8 +82,13 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
-// from 🔴 151 Computing Usernames
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} €`;
+};
+calcDisplayBalance(account1.movements);
 
+// from 🔴 151 Computing Usernames
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -297,7 +302,7 @@ console.log(movementsDescriptions);
 // 🔴 151. Computing Usernames => line 85
 
 // 🔴 152. The filter Method
-
+/*
 const deposits = movements.filter(function (mov, i, arr) {
   return mov > 0;
 });
@@ -321,3 +326,29 @@ console.log(depositsFor); // (5) [200, 450, 3000, 70, 1300]
 // OR Jona's solution
 const withdrawals = movements.filter(mov => mov < 0);
 console.log(withdrawals); // [-400, -650, -130]
+*/
+
+// 🔴 153. The reduce method
+
+console.log(movements);
+
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+//   console.log(`Iteration ${i}: ${acc}`);
+//   return acc + cur;
+// }, 0); // if you chancge the 0 with 100 will add 100
+// console.log(balance); //3840
+
+const balance = movements.reduce((acc, cur) => acc + cur, 0);
+// if you chancge the 0 with 100 will add 100
+console.log(balance); //3840
+
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+console.log(balance2); // 3840
+
+// Example getting maximum value from Movements array -> 3000
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else return mov;
+}, movements[0]);
+console.log(max); // 3000
