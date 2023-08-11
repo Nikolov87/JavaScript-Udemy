@@ -6,7 +6,7 @@
 
 // Data
 /////////////////////////
-/* //TILL LINE 116 // 
+//TILL LINE 116 //
 const account1 = {
   owner: 'Jonas Schmedtmann',
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
@@ -72,7 +72,7 @@ const displayMovements = function (movements) {
     const html = `
   <div class="movements__row">
     <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
-    <div class="movements__value">${mov}</div>
+    <div class="movements__value">${mov} €</div>
   </div>
   `;
 
@@ -87,6 +87,32 @@ const calcDisplayBalance = function (movements) {
   labelBalance.textContent = `${balance} €`;
 };
 calcDisplayBalance(account1.movements);
+
+// 🔴 155. The Magic of Chaining Methods ⬇️
+const calcDisplaySummary = function (movements) {
+  const incomes = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${incomes} €`;
+
+  const out = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `${Math.abs(out)} €`;
+
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * 1.2) / 100)
+    .filter((int, i, arr) => {
+      console.log(arr);
+      return int >= 1;
+    })
+    .reduce((acc, int) => acc + int, 0);
+  labelSumInterest.textContent = `${interest} €`;
+};
+
+calcDisplaySummary(account1.movements);
+// 🔴 155. The Magic of Chaining Methods⬆️
 
 // from 🔴 151 Computing Usernames
 const createUsernames = function (accs) {
@@ -113,7 +139,7 @@ createUsernames(accounts); // stw
 // ]);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
- */ // from line 9
+// from line 9
 /////////////////////////////////////////////////
 // 🔴 142.Simple Array Methods
 //// .slice method
@@ -375,7 +401,7 @@ TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
 */
-
+/*
 // 1️⃣ First solution
 
 const calcAverageHumanAge = function (ages) {
@@ -410,3 +436,22 @@ console.log(avg1, avg2);
 // // Test Data 2
 // const testData2 = [16, 6, 10, 5, 6, 1, 4];
 // console.log(calcAverageHumanAge(testData2).toFixed()); // Result: 47
+*/
+
+// 🔴 155. The Magic of Chaining Methods // needed code from line 9 till 116
+/*
+const eurToUsd = 1.1;
+console.log(movements);
+
+//
+const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  .map((mov, i, arr) => {
+    return mov * eurToUsd;
+  })
+  // .map(mov => mov * eurToUsd)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(totalDepositsUSD);
+*/
+
+// 🔴
