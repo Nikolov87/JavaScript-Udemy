@@ -905,7 +905,7 @@ console.log(convertTitleCase('this is a LONG title but not too long'));
 console.log(convertTitleCase('and here is another title with an EXAMPLE'));
 */
 
-// 🔴 Coding Challenge #4 🔴 🤯
+// 🔴 167. Coding Challenge #4 🔴 🤯
 
 /* 
 Julia and Kate are still studying dogs, and this time they are studying if dogs are eating 
