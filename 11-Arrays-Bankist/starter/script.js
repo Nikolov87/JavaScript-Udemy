@@ -743,3 +743,100 @@ labelBalance.addEventListener('click', function () {
   // wich then transforn the initial array to array we wont
   console.log(movementsUI);
 });
+
+// 🔴 165. Summary:Which Array Method to Use?
+// 🚨 24 array methods 🚨
+// push()
+// pop();
+// shift();
+// unshift();
+// concat();
+// slice();
+// splice();
+// forEach();
+// map();
+// filter();
+// reduce();
+// reduceRight();
+// some();
+// every();
+// indexOf();
+// lastIndexOf();
+// find();
+// findIndex();
+// sort();
+// reverse();
+// isArray();
+// includes();
+// join();
+// toString();
+
+// 🚨 To mutate origunal array
+// - Add to original:
+// .push  (end)
+// .unshift (start)
+
+// - Remove from original:
+// .pop (end)
+// .shift (start)
+// .splice  (any)
+
+// - Others:
+// .reverse
+// .sort
+// .fill
+
+//////////
+// 🚨 A new array
+// - Computed from original:
+// .map (loop)
+
+// - Filtered using condition:
+// .filter
+
+// - Portion of original:
+// .slice
+
+// - Adding original to other:
+// .concat
+
+// - Flattening the original:
+// .flat
+// .flatMap
+
+/////////////
+// 🚨 An array index
+// - Based on value:
+// .indexOf
+
+// - Based on test condition:
+// .findIndex
+
+// 🚨 An array element
+// - Based on test condition:
+// .find
+
+/////////////////
+
+// 🚨 Know if array includes
+// - Based on value:
+// .includes
+
+// - Basedon test condition:
+// .some
+// .every
+
+// 🚨 A new string
+// - Based on separator string:
+// .join
+
+// 🚨 To transfor to value
+// - Based on accumulator:
+// .reduce
+// (Boil down array to single value of any type:
+// number, string, boolean, or even new array or object)
+
+// 🚨 To just loop array
+// - Based on callback
+// .forEach
+// (Does not create a new array, just loop over it)
