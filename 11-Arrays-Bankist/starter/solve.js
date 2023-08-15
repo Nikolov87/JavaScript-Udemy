@@ -10,6 +10,7 @@ names.forEach(name => {
 
 // or this one
 
+/*
 const user = 'Steven Thomas Williams'; // stw
 const username = user
   .toLocaleLowerCase()
@@ -18,3 +19,4 @@ const username = user
   .join('');
 
 console.log(username); // stw
+*/
