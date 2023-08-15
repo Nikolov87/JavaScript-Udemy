@@ -951,7 +951,7 @@ const dogs = [
 
 GOOD LUCK 😀
 */
-
+/*
 const dogs = [
   { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
   { weight: 8, curFood: 200, owners: ['Matilda'] },
@@ -1001,3 +1001,4 @@ console.log(dogs.filter(checkEatingOkay));
 // 💥 8.
 const dogsSorted = dogs.slice().sort((a, b) => a.recFood - b.recFood);
 console.log(dogsSorted);
+*/
