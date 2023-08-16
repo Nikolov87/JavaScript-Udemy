@@ -94,7 +94,7 @@ const displayMovements = function (movements, sort = false) {
         <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
-        <div class="movements__value">${mov}€</div>
+        <div class="movements__value">${mov.toFixed(2)}€</div>
       </div>
     `;
 
@@ -104,19 +104,19 @@ const displayMovements = function (movements, sort = false) {
 
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${acc.balance}€`;
+  labelBalance.textContent = `${acc.balance.toFixed(2)}€`;
 };
 
 const calcDisplaySummary = function (acc) {
   const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumIn.textContent = `${incomes}€`;
+  labelSumIn.textContent = `${incomes.toFixed(2)}€`;
 
   const out = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumOut.textContent = `${Math.abs(out)}€`;
+  labelSumOut.textContent = `${Math.abs(out).toFixed(2)}€`;
 
   const interest = acc.movements
     .filter(mov => mov > 0)
@@ -126,7 +126,7 @@ const calcDisplaySummary = function (acc) {
       return int >= 1;
     })
     .reduce((acc, int) => acc + int, 0);
-  labelSumInterest.textContent = `${interest}€`;
+  labelSumInterest.textContent = `${interest.toFixed(2)}€`;
 };
 
 const createUsernames = function (accs) {
@@ -206,7 +206,8 @@ btnTransfer.addEventListener('click', function (e) {
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
 
-  const amount = +inputLoanAmount.value;
+  const amount = Math.floor(inputLoanAmount.value);
+  // .floor rounding down and changing the string to number and you dont need to use + operator
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
     // Add movement
@@ -254,6 +255,7 @@ btnSort.addEventListener('click', function (e) {
 
 // 🔴 170.Converting and Checking Numbers
 
+/*
 console.log(23 === 23.0); // true
 
 // Base 10 - 0 to 9 // 1/10 = 0.1 // 3/10 = 3.33333333 Infinity 33333
@@ -289,3 +291,51 @@ console.log(Number.isFinite(20)); // true
 console.log(Number.isFinite('20')); // false
 console.log(Number.isFinite(+'20X')); // false
 console.log(Number.isFinite(23 / 0)); // false // infinity
+*/
+
+// 🔴 171. Math and Rounding
+//
+console.log(Math.sqrt(25)); // Square root // outout 5
+console.log(25 ** (1 / 2)); // 5
+console.log(8 ** (1 / 3)); // 2
+
+console.log(Math.max(5, 18, 23, 11, 2)); // 23
+console.log(Math.max(5, 18, '23', 11, 2)); // 23
+console.log(Math.max(5, 18, '23px', 11, 2)); // NaN
+
+console.log(Math.min(5, 18, 23, 11, 2)); // 2
+
+console.log(Math.PI); // 3.141592653589793
+console.log(Math.PI * Number.parseFloat('10px') ** 2); // 314.1592653589793
+
+console.log(Math.random()); // random numbers between 0 and 1 // every time is different
+console.log(Math.trunc(Math.random() * 6) + 1); // remuving decimal part //
+// the random output is between 1 and 6
+
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min) + 1) + min;
+// 0...1 -> 0...(max - min) -> min...max
+// console.log(randomInt(10, 20)); // random number between 10 and 20
+
+// Rounding integers
+console.log(Math.round(23.6)); // removing decimal part // output 24
+console.log(Math.round(23.4)); // rounding to the closest number // 23
+
+console.log(Math.ceil(23.3)); // rounding down // 24
+console.log(Math.ceil(23.9)); // 24
+
+console.log(Math.floor(23.4)); // rounding down // 23
+console.log(Math.floor('23.9')); // this methods make coercion // output the same 23
+
+// 🚨 .trunc and .floor both cut off the 🚨
+// 🚨 decimal part when we work with positive numbers 🚨
+
+// with NEGATIVE NUMBERS WORK IN DIFFERENT
+console.log(Math.trunc(-23.4)); // -23
+console.log(Math.floor(-23.4)); // -24 in this case .floor is the best way
+
+// 🚨 Rounding decimals 🚨 (Decimal - не цяло число)
+console.log((2.7).toFixed(0)); // 3 // but string
+console.log((2.7).toFixed(3)); // 2.700 like a string
+console.log((2.345).toFixed(2)); // 2.35 like a string
+console.log(+(2.345).toFixed(2)); // converting the string to number adding +
