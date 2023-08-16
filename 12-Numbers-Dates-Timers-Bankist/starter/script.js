@@ -294,7 +294,7 @@ console.log(Number.isFinite(23 / 0)); // false // infinity
 */
 
 // 🔴 171. Math and Rounding
-//
+/*
 console.log(Math.sqrt(25)); // Square root // outout 5
 console.log(25 ** (1 / 2)); // 5
 console.log(8 ** (1 / 3)); // 2
@@ -339,3 +339,32 @@ console.log((2.7).toFixed(0)); // 3 // but string
 console.log((2.7).toFixed(3)); // 2.700 like a string
 console.log((2.345).toFixed(2)); // 2.35 like a string
 console.log(+(2.345).toFixed(2)); // converting the string to number adding +
+*/
+
+// 🔴 172. The Remainder Operator
+// оператор за остатък
+console.log(5 % 2); // output 1
+console.log(5 / 2); // 2.5 // 5 = 2 * 2 + 1
+
+console.log(8 % 3); // 2
+console.log(8 / 3); // 8 = 2 * 3 + 2
+
+console.log(6 % 2); // 0
+console.log(6 / 2); // 3
+
+console.log(7 % 2); // 1
+console.log(7 % 2); // 3.5
+
+const isEven = n => n % 2 === 0;
+console.log(isEven(8)); // true
+console.log(isEven(23)); // false
+console.log(isEven(234)); // true
+
+labelBalance.addEventListener('click', function () {
+  [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
+    // 0, 2, 4, 6
+    if (i % 2 === 0) row.style.backgroundColor = 'orangered';
+    // 0, 3, 6, 9
+    if (i % 3 === 0) row.style.backgroundColor = 'blue';
+  });
+});
