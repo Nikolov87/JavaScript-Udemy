@@ -294,6 +294,21 @@ console.log(Number.isFinite(23 / 0)); // false // infinity
 */
 
 // 🔴 171. Math and Rounding
+
+// Изразът 2 ** 53 - 1 представлява математическо изчисление, което се извършва в
+// JavaScript. Нека го разгледаме по-подробно:
+// 2 ** 53: Това е операторът на степен (**), който изчислява 2 на степен 53.
+// Това е еквивалентно на 2 умножено по себе си 53 пъти.
+// Математически: 2^52 = 2 * 2 * 2 * ... * 2 (53 пъти)
+// В JavaScript: 2 ** 53 = 9007199254740991
+
+// The expression 2 ** 53 - 1 represents a mathematical calculation that is performed in
+// JavaScript. Let's take a closer look at it:
+// 2 ** 53: This is the exponent (**) operator that calculates 2 to the 53nd power.
+// This is equivalent to 2 multiplied by itself 53 times.
+// Math: 2^53 = 2 * 2 * 2 * ... * 2 (53 times)
+// In JavaScript: 2 ** 53 = 9007199254740991
+
 /*
 console.log(Math.sqrt(25)); // Square root // outout 5
 console.log(25 ** (1 / 2)); // 5
@@ -390,3 +405,42 @@ console.log(PI); // 3.1415
 console.log(Number('230_000')); // NaN
 console.log(parseInt('230_000')); // 230
 */
+
+// 🔴 174. Working with BigInt
+
+console.log(2 ** 53 - 1); // 9007199254740991 The biggest number in JavaScript
+console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+// If we do calculations in JS bigger
+// this number 9007199254740991 we will not recive the correct result
+
+// From 2020 is using BIG Integer - BibInt with who you can calculate numbers
+// bugger how much you need
+
+console.log(4983294879238479283749827394872983479872); // 4.9832948792384794e+39
+console.log(4983294879238479283749827394872983479872n);
+// 4983294879238479283749827394872983479872n
+// Using n you have the all number OR ⬇️
+console.log(BigInt('4983294879238479283749827394872983479872'));
+// IMPORTATNT THE OUTPUT IN THIS CASE IS A STRING NUMBER
+
+//Operations
+console.log(10000n + 10000n);
+
+const huge = 20289830237283728378237n;
+const num = 23;
+console.log(huge * BigInt(num));
+// in this case we need to convert the normal number to
+// BigInt to recive the correct results
+
+//Exceptions
+console.log(20n > 15); // true
+console.log(20n === 20); // false
+console.log(typeof 20n); // bigint
+console.log(20n == 20); // true
+console.log(20n == '20'); // true
+
+console.log(huge + ' is REALLY big!!!');
+
+// Divisions
+console.log(11n / 3n); // 3n
+console.log(10 / 3); // 3.3333333333333335
