@@ -35,3 +35,5 @@ document.addEventListener('keydown', function (e) {
 // 🔴 184. Project:"Bankist" Website
 // adding line 22 btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal)); // forEach
 // and deleting for loop
+
+// 🔴 185. How the DOM Really Works
