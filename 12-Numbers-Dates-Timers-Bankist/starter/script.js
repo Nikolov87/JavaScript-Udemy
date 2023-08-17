@@ -539,7 +539,7 @@ console.log(days1);
 // 🔴 178. Internationalizing Dates(Intl)
 
 // 🔴 179. Internationalizing Numbers(Intl)
-
+/*
 const num = 3884764.23;
 
 const options = {
@@ -556,3 +556,22 @@ console.log(
   navigator.language,
   new Intl.NumberFormat(navigator.language, options).format(num)
 );
+*/
+
+// 🔴 180.Timers: setTimeout and setInterval
+
+const ingredients = ['olives', 'spinach'];
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2} 🍕`),
+  3000,
+  ...ingredients
+);
+console.log('Waiting...');
+
+if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
+
+// setInterval
+setInterval(function () {
+  const now = new Date();
+  console.log(now);
+}, 1000);
