@@ -171,6 +171,7 @@ btnScrollTo.addEventListener('click', function (e) {
 
 // 🔴 189. Types of Events and Event Handlers
 
+/*
 // new way
 const h1 = document.querySelector('h1');
 
@@ -198,3 +199,6 @@ setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
 //   alert('onmouseenter: Great! You are reading the heading :D');
 // };
 // But even this new way is above addEventListener
+*/
+
+// 🔴 190. Event Propagation: Bubbling and Capturing
