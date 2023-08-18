@@ -168,3 +168,33 @@ btnScrollTo.addEventListener('click', function (e) {
   // new NEW way and work just the same
   section1.scrollIntoView({ behavior: 'smooth' });
 });
+
+// 🔴 189. Types of Events and Event Handlers
+
+// new way
+const h1 = document.querySelector('h1');
+
+const alertH1 = function (e) {
+  alert('addEventListener: Great! You are reading the heading :D');
+};
+
+// after creating and named function of the EventListener
+// we are able to delete it if we need
+
+h1.addEventListener('mouseenter', alertH1);
+
+// after using removeEventListener we are able ot see the vent ONLY ONE'S
+// h1.removeEventListener('mouseenter', alertH1);
+
+// testing time to remove the eventListener
+setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
+
+// The third way to manipulate eventListener is in th HTML
+// you can see it in index.html line 44 <!-- <h1 onclick="alert('HTML alert')"> -->
+
+// We can use on event property directly on the element
+// old way
+// h1.onmouseenter = function (e) {
+//   alert('onmouseenter: Great! You are reading the heading :D');
+// };
+// But even this new way is above addEventListener
