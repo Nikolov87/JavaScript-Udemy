@@ -40,8 +40,8 @@ document.addEventListener('keydown', function (e) {
 
 // 🔴 186. Selecting, Creating and Deleting Elemets
 
+/*
 // Selecting elements
-
 console.log(document.documentElement);
 console.log(document.head);
 console.log(document.body);
@@ -79,8 +79,10 @@ document
     // message.remove(); // after clicking of the message, the message is gone
     message.parentElement.removeChild(message);
   });
+*/
 
 // 🔴 187. Style, Attributes and Classes
+/*
 message.style.backgroundColor = '#37383d';
 message.style.width = '120%';
 
@@ -128,3 +130,41 @@ logo.classList.contains('c'); // not includes
 
 // don't use way to describe className
 logo.clasName = 'jonas';
+*/
+
+// 🔴 188. Implementing Smooth Scrolling
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  // e.target = btnScrollTo
+  console.log(e.target.getBoundingClientRect());
+
+  console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
+
+  console.log(
+    'height/width viewport',
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth
+  );
+
+  // scrolling
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
+
+  // the old way to be done
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+
+  // new NEW way and work just the same
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
