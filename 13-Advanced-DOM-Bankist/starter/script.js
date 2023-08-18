@@ -41,6 +41,7 @@ document.addEventListener('keydown', function (e) {
 // 🔴 186. Selecting, Creating and Deleting Elemets
 
 // Selecting elements
+
 console.log(document.documentElement);
 console.log(document.head);
 console.log(document.body);
@@ -78,3 +79,52 @@ document
     // message.remove(); // after clicking of the message, the message is gone
     message.parentElement.removeChild(message);
   });
+
+// 🔴 187. Style, Attributes and Classes
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+console.log(message.style.color);
+console.log(message.style.backgroundColor);
+
+console.log(getComputedStyle(message).color);
+console.log(getComputedStyle(message).height);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 25 + 'px';
+
+// changing color
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+// changing attributes
+
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt); // Bankist logo
+console.log(logo.src);
+console.log(logo.className); // nav__logo
+
+logo.alt = 'Beautiful minimalist logo';
+
+// non-standard
+console.log(logo.designer);
+console.log(logo.getAttribute('designer')); // undefined
+logo.setAttribute('company', 'Bankist'); // null
+
+console.log(logo.src);
+console.log(logo.getAttribute('src'));
+
+const link = document.querySelector('.nav__link--btn');
+console.log(link.href);
+console.log(link.getAttribute('href'));
+
+// data attributes
+console.log(logo.dataset.versionNumber);
+
+// classes
+logo.classList.add('c', 'j');
+logo.classList.remove('c', 'j');
+logo.classList.toggle('c');
+logo.classList.contains('c'); // not includes
+
+// don't use way to describe className
+logo.clasName = 'jonas';
