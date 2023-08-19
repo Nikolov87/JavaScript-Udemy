@@ -302,7 +302,7 @@ h1.closest('.header').style.background = 'var(--gradient-secondary)'; // the clo
 h1.closest('h1').style.background = 'var(--gradient-primary)'; // the closest h1
 
 // Going sideways: siblings
-
+/*
 console.log(h1.previousElementSibling);
 console.log(h1.nextElementSibling);
 
@@ -313,3 +313,4 @@ console.log(h1.parentElement.children); // in this way we have ALL the elements(
 [...h1.parentElement.children].forEach(function (el) {
   if (el !== h1) el.style.transform = 'scale(0.5)'; // reduce the different from h1 elements  by 50%
 });
+*/
