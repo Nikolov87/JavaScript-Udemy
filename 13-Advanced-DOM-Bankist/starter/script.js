@@ -302,15 +302,15 @@ const h1 = document.querySelector('h1');
 // console.log(h1.childNodes); // every element effected from highlight + the children
 // console.log(h1.children);
 
-h1.firstElementChild.style.color = 'white';
-h1.lastElementChild.style.color = 'orangered';
+// h1.firstElementChild.style.color = 'white';
+// h1.lastElementChild.style.color = 'orangered';
 
 // Going UPwards: parents
 // console.log(h1.parentNode);
 // console.log(h1.parentElement);
 
-h1.closest('.header').style.background = 'var(--gradient-secondary)'; // the closest  header
-h1.closest('h1').style.background = 'var(--gradient-primary)'; // the closest h1
+// h1.closest('.header').style.background = 'var(--gradient-secondary)'; // the closest  header
+// h1.closest('h1').style.background = 'var(--gradient-primary)'; // the closest h1
 
 // Going sideways: siblings
 /*
@@ -488,12 +488,12 @@ const slider = function () {
   let curSlide = 0;
   const maxSlide = slides.length;
 
-  // function
+  // Functions
   const createDots = function () {
     slides.forEach(function (_, i) {
-      dotContainer.insertAdjacentText(
+      dotContainer.insertAdjacentHTML(
         'beforeend',
-        `<button class="dots__dot" data-slide="${i}></button>`
+        `<button class="dots__dot" data-slide="${i}"></button>`
       );
     });
   };
@@ -510,18 +510,55 @@ const slider = function () {
 
   const goToSlide = function (slide) {
     slides.forEach(
-      (s, i) => s.style.transform == `translateX(${100 * (i - slide)}%)`
+      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
     );
   };
-  // Next slide
+
+  // 🔴 201.Building a Slider Component: Part 2
   const nextSlide = function () {
     if (curSlide === maxSlide - 1) {
       curSlide = 0;
     } else {
       curSlide++;
     }
+
     goToSlide(curSlide);
     activateDot(curSlide);
   };
+
+  const prevSlide = function () {
+    if (curSlide === 0) {
+      curSlide = maxSlide - 1;
+    } else {
+      curSlide--;
+    }
+    goToSlide(curSlide);
+    activateDot(curSlide);
+  };
+
+  const init = function () {
+    goToSlide(0);
+    createDots();
+
+    activateDot(0);
+  };
+  init();
+
+  // Event handlers
+  btnRight.addEventListener('click', nextSlide);
+  btnLeft.addEventListener('click', prevSlide);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') prevSlide();
+    e.key === 'ArrowRight' && nextSlide();
+  });
+
+  dotContainer.addEventListener('click', function (e) {
+    if (e.target.classList.contains('dots__dot')) {
+      const { slide } = e.target.dataset;
+      goToSlide(slide);
+      activateDot(slide);
+    }
+  });
 };
 slider();
