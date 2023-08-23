@@ -9,6 +9,7 @@
 // 🚨 208. Constructor Functions and the new Operator
 
 // Construction functions always start with capital letter
+
 const Person = function (firstName, birthYear) {
   // instance properties
   this.firstName = firstName;
@@ -43,3 +44,25 @@ console.log(matilda, ivan);
 // Person {firstName: 'ivan', birthYear: 1975}
 
 console.log(petar instanceof Person); // true
+
+// 🚨 209. Prototypes
+console.log(Person.prototype);
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+petar.calcAge(); // 50
+matilda.calcAge(); // 20
+
+console.log(petar.__proto__); // {calcAge: ƒ, constructor: ƒ}
+console.log(petar.__proto__ === Person.prototype); // true
+
+console.log(Person.prototype.isPrototypeOf(petar)); // true
+console.log(Person.prototype.isPrototypeOf(matilda)); // true
+console.log(Person.prototype.isPrototypeOf(Person)); // false
+
+Person.prototype.species = 'Homo Sapiens';
+console.log(jonas.species, matilda.species);
+
+console.log(jonas.hasOwnProperty('firstName'));
+console.log(jonas.hasOwnProperty('species'));
