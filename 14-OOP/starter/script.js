@@ -46,7 +46,7 @@ console.log(matilda, ivan);
 console.log(petar instanceof Person); // true
 
 // 🚨 209. Prototypes
-/*
+
 console.log(Person.prototype);
 
 Person.prototype.calcAge = function () {
@@ -63,10 +63,31 @@ console.log(Person.prototype.isPrototypeOf(matilda)); // true
 console.log(Person.prototype.isPrototypeOf(Person)); // false
 
 Person.prototype.species = 'Homo Sapiens';
-console.log(jonas.species, matilda.species);
+console.log(petar.species, matilda.species);
 
-console.log(jonas.hasOwnProperty('firstName'));
-console.log(jonas.hasOwnProperty('species'));
-*/
+console.log(petar.hasOwnProperty('species'));
+console.log(petar.hasOwnProperty('firstName'));
 
 // 🚨 210. Prototypal Inheritance and The Prototype Chain
+// 🚨 211. Prototypal Inheritance on Built-in Object
+
+console.log(petar.__proto__);
+// Object .prototype (top of prototype chain)
+console.log(petar.__proto__.__proto__);
+console.log(petar.__proto__.__proto__.__proto__); // null
+
+console.dir(Person.prototype.constructor);
+
+const arr = [3, 4, 5, 7, 8, 9]; // new Array === []
+console.log(arr.__proto__);
+console.log(arr.__proto__ === Array.prototype);
+
+console.log(arr.__proto__.__proto__);
+
+// Array.prototype.unique = function () {
+//   return [...new Set(this)];
+// };
+// console.log(arr.unique());
+
+const h1 = document.querySelector('h1');
+console.log(x => x + 1);
