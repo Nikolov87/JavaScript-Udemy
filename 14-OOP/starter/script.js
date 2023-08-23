@@ -46,6 +46,7 @@ console.log(matilda, ivan);
 console.log(petar instanceof Person); // true
 
 // 🚨 209. Prototypes
+/*
 console.log(Person.prototype);
 
 Person.prototype.calcAge = function () {
@@ -66,3 +67,6 @@ console.log(jonas.species, matilda.species);
 
 console.log(jonas.hasOwnProperty('firstName'));
 console.log(jonas.hasOwnProperty('species'));
+*/
+
+// 🚨 210. Prototypal Inheritance and The Prototype Chain
