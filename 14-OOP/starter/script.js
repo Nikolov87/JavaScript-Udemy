@@ -94,6 +94,7 @@ console.log(x => x + 1);
 */
 
 // 🚨 212. Coding Challenge #1
+
 /* 
 1. Use a constructor function to implement a Car. 
 A car has a make and a speed property. The speed 
@@ -112,6 +113,7 @@ DATA CAR 2: 'Mercedes' going at 95 km/h
 GOOD LUCK 😀
 */
 
+/*
 function Car(make, speed) {
   this.make = make;
   this.speed = speed;
@@ -143,3 +145,43 @@ Mercedes.accelerate();
 Mercedes.brake();
 Mercedes.brake();
 Mercedes.brake();
+*/
+
+// 🚨 213. ES6 Classes
+// Classes are special type of functions
+
+// class expression
+// const PersonCL = class {};
+
+// class declaration
+class PersonCL {
+  constructor(firstName, birthYear) {
+    // constructor() is a METHOD in this function and need to be call constructor
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  // Methods will be added to .prototype property
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+  greet() {
+    console.log(`Hey ${this.firstName}`); // Hey Jessuca
+  }
+}
+const jessica = new PersonCL('Jessuca', 1996);
+console.log(jessica); // PersonCL {firstName: 'Jessuca', birthYear: 1996}
+jessica.calcAge(); // 41
+
+console.log(jessica.__proto__ === PersonCL.prototype);
+
+// PersonCL.prototype.greet = function () {
+//   console.log(`Hey ${this.firstName}`);
+// };
+jessica.greet(); // Hey Jessuca
+
+// ℹ️ 👇
+// 1. Classes are NOT hoisted
+// 2. Classes are first-class citizens
+// 2.1. (we can pass them in to functions and also return them from functions)
+// 3. Classes are executed in strict mode
