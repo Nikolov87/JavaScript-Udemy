@@ -266,7 +266,7 @@ DATA CAR 1: 'Ford' going at 120 km/h
 
 GOOD LUCK 😀
 */
-
+/*
 class Car {
   constructor(make, speed) {
     this.make = make;
@@ -299,3 +299,46 @@ car.accelerate();
 car.brake();
 car.speedUS = 50;
 console.log(car); // Car {make: 'Ford', speed: 80}
+*/
+
+// 🚨 218. Inheritance Between "Classes": Constructor Functions
+// Наследяване между "класове": функции на конструктора
+
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  //   this.firstName = firstName;
+  //   this.birthYear = birthYear;
+  // 👇 to avoid duplicate of the code, change this two lines with this one
+  Person.call(this, firstName, birthYear);
+  // the .call method here call function Person and spotify this key word
+  // to be this key word and in this function as well
+  this.course = course;
+};
+
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const ivan = new Student('Ivan', 2020, 'Coputer Science');
+ivan.introduce(); // My name is Ivan and I study Coputer Science
+ivan.calcAge(); // 17
+
+console.log(ivan.__proto__);
+console.log(ivan.__proto__.__proto__);
+
+console.log(ivan instanceof Student); // true
+console.log(ivan instanceof Person); // true
+console.log(ivan instanceof Object); // true
+
+Student.prototype.constructor = Student;
+console.dir(Student.prototype.constructor); // ƒ Student(firstName, birthYear, course)
