@@ -153,6 +153,7 @@ Mercedes.brake();
 // class expression
 // const PersonCL = class {};
 
+/*
 // class declaration
 class PersonCL {
   constructor(firstName, birthYear) {
@@ -185,3 +186,25 @@ jessica.greet(); // Hey Jessuca
 // 2. Classes are first-class citizens
 // 2.1. (we can pass them in to functions and also return them from functions)
 // 3. Classes are executed in strict mode
+*/
+
+// 🚨 214. Setters and Getters
+// this is functions who get and set value,
+// but out side they still look like regular properties?
+
+const account = {
+  owner: 'jonas',
+  movements: [200, 300, 500, 340],
+
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+  set latest(mov) {
+    this.movements.push(mov);
+  },
+};
+
+console.log(account.latest); // 340
+
+account.latest = 50;
+console.log(account.movements); // (5) [200, 300, 500, 340, 50]
