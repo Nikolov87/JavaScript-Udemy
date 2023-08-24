@@ -192,6 +192,7 @@ jessica.greet(); // Hey Jessuca
 // this is functions who get and set value,
 // but out side they still look like regular properties?
 
+/*
 const account = {
   owner: 'jonas',
   movements: [200, 300, 500, 340],
@@ -208,3 +209,18 @@ console.log(account.latest); // 340
 
 account.latest = 50;
 console.log(account.movements); // (5) [200, 300, 500, 340, 50]
+*/
+
+// 🚨 215. Static Methods
+const Person = function (firstName, birthYear) {
+  // instance properties
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+const petar = new Person('Petar', 1987);
+Person.hey = function () {
+  console.log('Hey there 👻');
+};
+
+Person.hey();
