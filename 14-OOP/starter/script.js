@@ -614,6 +614,7 @@ console.log(acc1.pin); // 1111
 // (there is also and the static version)
 // all of them are 8
 
+/*
 class Account {
   // 1/ Public fields
   locale = navigator.language;
@@ -680,3 +681,80 @@ console.log(acc1);
 // console.log(acc1.#movemets); // Error message
 // console.log(acc1.#pin); // Error message
 // console.log(acc1.#approveLoan(100)); // Error message
+*/
+
+// 🚨 225. Chaining Methods
+
+class Account {
+  // 1/ Public fields
+  locale = navigator.language;
+
+  // 2/ Private fields
+  #movements = [];
+  #pin;
+
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    // Protected property
+    this.#pin = pin; // puting _ protecting the pin
+    // this._movements = [];
+    // this.locale = navigator.language;
+
+    console.log(`Thank's for opening an account, ${owner}`);
+  }
+
+  // 3/ Public methods
+
+  // Public interface (API)
+
+  getMovements() {
+    return this.#movements;
+  }
+
+  deposit(val) {
+    this.#movements.push(val);
+    return this; // adding return this because this is the current object
+  }
+  withdraw(val) {
+    this.deposit(-val);
+    return this; // adding return this because this is the current object
+  }
+
+  requestLoan(val) {
+    // if (this.#approveLoan(val)) {
+    if (this._approveLoan(val)) {
+      this.deposit(val);
+      console.log(`Loan approved`);
+      return this; // adding return this because this is the current object
+    }
+  }
+
+  // 4/ Private methods
+  //   #approveLoan(val) {
+  _approveLoan(val) {
+    return true;
+  }
+}
+
+const acc1 = new Account('Jonas', 'EUR', 1111);
+
+// movements
+// acc1._movements.push(250);
+// acc1._movements.push(-150);
+// OR
+acc1.deposit(250);
+acc1.withdraw(140);
+acc1.requestLoan(1000);
+
+console.log(acc1.getMovements());
+
+console.log(acc1);
+
+// console.log(acc1.#movemets); // Error message
+// console.log(acc1.#pin); // Error message
+// console.log(acc1.#approveLoan(100)); // Error message
+
+// Chaining
+acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
+console.log(acc1.getMovements());
