@@ -685,6 +685,7 @@ console.log(acc1);
 
 // 🚨 225. Chaining Methods
 
+/*
 class Account {
   // 1/ Public fields
   locale = navigator.language;
@@ -758,3 +759,6 @@ console.log(acc1);
 // Chaining
 acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
 console.log(acc1.getMovements());
+*/
+
+// 🚨 226. ES6 Classes Summary
