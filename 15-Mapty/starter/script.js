@@ -79,3 +79,4 @@ inputType.addEventListener('change', function () {
 // 📍 233. Displaying a Map Using Leaflet Library
 // 📍 234. Displaying a Map Marker
 // 📍 235. Rendering Workout Input Form
+// 📍 236. Project Architecture
