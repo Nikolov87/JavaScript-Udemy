@@ -152,7 +152,6 @@ class App {
   _newWorkout(e) {
     const validInputs = (...inputs) =>
       inputs.every(inp => Number.isFinite(inp));
-
     const allPositive = (...inputs) => inputs.every(inp => inp > 0);
 
     e.preventDefault();
@@ -176,6 +175,8 @@ class App {
         !allPositive(distance, duration, cadance)
       )
         return alert('Inputs have to be positive numbers!');
+
+      workout = new Running([lat, lng], distance, duration, cadance);
     }
 
     // If workout cycling, create cycling object
@@ -275,6 +276,8 @@ class App {
   }
 
   _moveToPopup(e) {
+    if (!this.#map) return;
+
     const workoutEl = e.target.closest('.workout');
 
     if (!workoutEl) return;
@@ -328,3 +331,4 @@ const app = new App();
 // 📍 240. Rendering Workouts
 // 📍 241. Move to Market On Click
 // 📍 242. Working with localStorage
+// 📍 243. Final Considerations
