@@ -47,7 +47,7 @@ const getCountryData = function (country) {
 getCountryData('bulgaria');
 */
 // 👻 249.[OPTIONAL] How the Web Works: Requests and Responses
-// 👻 250.Promises and the Fetch API
+// 👻 250. Welcome to Callback Hell
 
 const renderCountry = function (data, className = '') {
   const html = `
@@ -121,3 +121,5 @@ setTimeout(() => {
     }, 1000);
   }, 1000);
 }, 1000);
+
+// 👻 251. Promises and the Fetch API
