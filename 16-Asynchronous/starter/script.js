@@ -68,6 +68,7 @@ const renderCountry = function (data, className = '') {
   countriesContainer.style.opacity = 1;
 };
 
+/*
 const getCountryAndNeighbour = function (country) {
   // AJAX call country 1
   const request = new XMLHttpRequest();
@@ -121,5 +122,43 @@ setTimeout(() => {
     }, 1000);
   }, 1000);
 }, 1000);
+*/
 
 // 👻 251. Promises and the Fetch API
+// and how you can escape hell(previous task-video)
+
+// 1️⃣ the old way
+// const request = new XMLHttpRequest();
+// request.open(
+//   'GET',
+//   `https://countries-api-836d.onrender.com/countries/name/${country}`
+// );
+// request.send();
+
+// 2️⃣ the new way
+// const request = fetch(
+//   'https://countries-api-836d.onrender.com/countries/name/bulgaria'
+// );
+// console.log(request);
+
+// // 👻 252. Consuming Promises
+// const getCountryData = function (country) {
+//   fetch(`https://countries-api-836d.onrender.com/countries/name/${country}`)
+//     .then(function (response) {
+//       console.log(response); // in ALL PROMISES we can call .then() method
+//       return response.json(); // this is New promise
+//     })
+//     .then(function (data) {
+//       console.log(data);
+//       renderCountry(data[0]);
+//     });
+// };
+
+// the 3️⃣ way - the most simple
+
+const getCountryData = function (country) {
+  fetch(`https://countries-api-836d.onrender.com/countries/name/${country}`) // there we fetch something
+    .then(response => response.json()) // there we get the responce who is transform to JSON
+    .then(data => renderCountry(data[0])); // then we take the data and render the country to the DOM
+};
+getCountryData('bulgaria');
