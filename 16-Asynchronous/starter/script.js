@@ -157,8 +157,23 @@ setTimeout(() => {
 // the 3️⃣ way - the most simple
 
 const getCountryData = function (country) {
+  // Country 1
   fetch(`https://countries-api-836d.onrender.com/countries/name/${country}`) // there we fetch something
     .then(response => response.json()) // there we get the responce who is transform to JSON
-    .then(data => renderCountry(data[0])); // then we take the data and render the country to the DOM
+    .then(data => {
+      renderCountry(data[0]); // then we take the data and render the country to the DOM
+
+      // 👻 253. Chaining Promises
+      const neighbour = data[0].borders[0];
+
+      if (!neighbour) return;
+
+      // Country 2
+      return fetch(
+        `https://countries-api-836d.onrender.com/countries/alpha/${neighbour}`
+      );
+    })
+    .then(response => response.json())
+    .then(data => renderCountry(data, 'neighbour'));
 };
-getCountryData('bulgaria');
+getCountryData('germany');
