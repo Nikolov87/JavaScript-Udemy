@@ -159,25 +159,81 @@ setTimeout(() => {
 //     });
 // };
 
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
+
+    return response.json();
+  });
+};
+
 // the 3️⃣ way - the most simple
+
+// const getCountryData = function (country) {
+//   // Country 1
+//   fetch(`https://countries-api-836d.onrender.com/countries/name/${country}`) // there we fetch something
+//     .then(response => {
+//       console.log(response);
+
+//       if (!response.ok)
+//         throw new Error(`Country not found (${response.status})`);
+
+//       return response.json();
+//     }) // there we get the responce who is transform to JSON
+//     .then(data => {
+//       renderCountry(data[0]); // then we take the data and render the country to the DOM
+
+//       // 👻 253. Chaining Promises
+//       //   const neighbour = data[0].borders[0];
+
+//       const neighbour = 'sdfsdgsfs';
+
+//       if (!neighbour) return;
+
+//       // Country 2
+//       return fetch(
+//         `https://countries-api-836d.onrender.com/countries/alpha/${neighbour}`
+//       );
+//     })
+//     .then(response => {
+//       if (!response.ok)
+//         throw new Error(`Country not found (${response.status})`);
+
+//       return response.json();
+//     })
+//     .then(data => renderCountry(data, 'neighbour'))
+//     .catch(err => {
+//       console.error(`${err} 💥`);
+//       renderError(`Something went wrong 💥 💥 💥 ${err.message}. Try again!`);
+//     })
+//     .finally(() => {
+//       countriesContainer.style.opacity = 1;
+//     });
+// };
+
 const getCountryData = function (country) {
   // Country 1
-  fetch(`https://countries-api-836d.onrender.com/countries/name/${country}`) // there we fetch something
-    .then(response => response.json()) // there we get the responce who is transform to JSON
+
+  getJSON(
+    `https://countries-api-836d.onrender.com/countries/name/${country}`,
+    'Country not found'
+  )
+    // there we get the responce who is transform to JSON
     .then(data => {
       renderCountry(data[0]); // then we take the data and render the country to the DOM
 
       // 👻 253. Chaining Promises
       const neighbour = data[0].borders[0];
 
-      if (!neighbour) return;
+      if (!neighbour) throw new Error('No neighbour found!');
 
       // Country 2
-      return fetch(
-        `https://countries-api-836d.onrender.com/countries/alpha/${neighbour}`
+      return getJSON(
+        `https://countries-api-836d.onrender.com/countries/alpha/${neighbour}`,
+        'Country not found'
       );
     })
-    .then(response => response.json())
+
     .then(data => renderCountry(data, 'neighbour'))
     .catch(err => {
       console.error(`${err} 💥`);
@@ -187,9 +243,12 @@ const getCountryData = function (country) {
       countriesContainer.style.opacity = 1;
     });
 };
+
 // 👻 254. Handling Rejected Promises // .catch(err => alert(err)); end of the chain
 btn.addEventListener('click', function () {
   getCountryData('bulgaria');
 });
 
-getCountryData('dsfsdfd');
+getCountryData('australia');
+
+// 👻 255. Throwing Errors Manually
