@@ -162,13 +162,13 @@ setTimeout(() => {
 ///
 //////////
 
-const getJSON = function (url, errorMsg = 'Something went wrong') {
-  return fetch(url).then(response => {
-    if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
+// const getJSON = function (url, errorMsg = 'Something went wrong') {
+//   return fetch(url).then(response => {
+//     if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
 
-    return response.json();
-  });
-};
+//     return response.json();
+//   });
+// };
 
 //////////////
 ///
@@ -524,6 +524,7 @@ Set the network speed to 'Fast 3G' in the dev tools Network tab, otherwise image
 GOOD LUCK 😀
 */
 
+/*
 const wait = function (seconds) {
   return new Promise(function (resolve) {
     setTimeout(resolve, seconds * 1000);
@@ -568,3 +569,39 @@ createImage('img/img-1.jpg')
     currentImg.style.display = 'none'; // hiding the current img after displaying
   })
   .catch(err => console.error(err));
+*/
+
+// 👻 262. Consuming Promises with Async/Await
+
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+//   fetch(
+//     `https://countries-api-836d.onrender.com/countries/name/${country}`
+//   ).then(res => console.log(res));
+
+const whereAmI = async function () {
+  // Geolocation
+  const pos = await getPosition();
+  const { latitude: lat, longitude: lng } = pos.coords;
+
+  // Reverse geocoding
+  const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+  const dataGeo = await resGeo.json();
+
+  // Country data
+  const res = await fetch(
+    `https://countries-api-836d.onrender.com/countries/name/${dataGeo.country}`
+  );
+  const data = await res.json();
+  console.log(data);
+  renderCountry(data[0]);
+};
+// await will stop the execution of the function till the Promise is fulfilld
+// or the data is fetch in this case
+
+whereAmI();
+console.log('first');
