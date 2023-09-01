@@ -34,7 +34,7 @@ const renderError = function (msg) {
 // 👻 248. Our First AJAX Call: XMLHttpRequest 🇧🇬
 
 // the old way calling AJAX in JS
-
+/*
 const getCountryData = function (country) {
   const request = new XMLHttpRequest();
   request.open(
@@ -69,7 +69,7 @@ const getCountryData = function (country) {
 };
 
 getCountryData('bulgaria');
-
+*/
 // 👻 249.[OPTIONAL] How the Web Works: Requests and Responses
 // 👻 250. Welcome to Callback Hell
 
@@ -573,16 +573,17 @@ createImage('img/img-1.jpg')
 
 // 👻 262. Consuming Promises with Async/Await
 
-const getPosition = function () {
-  return new Promise(function (resolve, reject) {
-    navigator.geolocation.getCurrentPosition(resolve, reject);
-  });
-};
+// const getPosition = function () {
+//   return new Promise(function (resolve, reject) {
+//     navigator.geolocation.getCurrentPosition(resolve, reject);
+//   });
+// };
 
 //   fetch(
 //     `https://countries-api-836d.onrender.com/countries/name/${country}`
 //   ).then(res => console.log(res));
 
+/*
 const whereAmI = async function () {
   try {
     // Geolocation
@@ -613,6 +614,7 @@ const whereAmI = async function () {
 };
 // await will stop the execution of the function till the Promise is fulfilld
 // or the data is fetch in this case
+*/
 
 // 👻 263. Error Handling With try...catch
 
@@ -625,6 +627,7 @@ const whereAmI = async function () {
 // }
 
 // 👻 264. Returning Values from Async Function
+/*
 console.log('1: Will get location');
 // const city = whereAmI();
 // console.log(city);
@@ -643,3 +646,32 @@ console.log('1: Will get location');
   }
   console.log('3: Finished getting location');
 })();
+*/
+
+// 👻 265. Running Promises in Parallel
+
+const get3Countries = async function (c1, c2, c3) {
+  try {
+    // const [data1] = await getJSON(
+    //   `https://countries-api-836d.onrender.com/countries/name/${c1}`
+    // );
+    // const [data2] = await getJSON(
+    //   `https://countries-api-836d.onrender.com/countries/name/${c2}`
+    // );
+    // const [data3] = await getJSON(
+    //   `https://countries-api-836d.onrender.com/countries/name/${c3}`
+    // );
+    // console.log([data1.capital, data2.capital, data3.capital]);
+
+    const data = await Promise.all([
+      getJSON(`https://countries-api-836d.onrender.com/countries/name/${c1}`),
+      getJSON(`https://countries-api-836d.onrender.com/countries/name/${c2}`),
+      getJSON(`https://countries-api-836d.onrender.com/countries/name/${c3}`),
+    ]);
+    console.log(data.map(d => d[0].capital));
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+get3Countries('bulgaria', 'canada', 'russia');
