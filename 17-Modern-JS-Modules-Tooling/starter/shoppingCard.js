@@ -1,6 +1,11 @@
 // Exporting module
 console.log('Exportig module');
 
+// Blocking code
+// console.log('Start fetching users');
+// await fetch('https://jsonplaceholder.typicode.com/posts');
+// console.log('Finish fetching users');
+
 const shippingCost = 10;
 const card = [];
 
