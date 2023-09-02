@@ -22,6 +22,7 @@ console.log('Importing module');
 // BUT THIS WE CAN'T DO IT 👆 bad practic
 
 import add from './shoppingCard.js'; // and even changing the name to 'add'
+import { addToCart } from './shoppingCard';
 add('pizza', 2); // output: 2 pizza added to cart
 add('berad', 3);
 add('apples', 5);
@@ -50,6 +51,7 @@ console.log(lastPost2);
 
 // 👀 174. The Module Pattern
 
+/*
 const ShoppingCart2 = (function () {
   const cart = [];
   const shippingCost = 10;
@@ -79,3 +81,19 @@ ShoppingCart2.addToCart('apple', 4);
 ShoppingCart2.addToCart('pizza', 2);
 console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost);
+*/
+
+// 👀 175. CommonJS Modules
+// --------------- !!!!!!!!!! -------- Using in nodeJS 👇
+// Export
+/*
+export.addTocart = function (product, quantity) {
+    cart.push({ product, quantity });
+    console.log(
+      `${quantity} ${product} added to cart (sipping cost is ${shippingCost})`
+    );
+  };
+  
+  // Import
+  const { addTocart } = require('./shoppingCart.js');
+  */
