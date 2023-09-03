@@ -49,3 +49,5 @@ console.log(budget);
 logBigExpenses(1000);
 
 // 👀 281. Let's Fix Some Bad Code: Part 1.👆
+
+// 👀 282. Declarative and Functional JavaScript Principles
