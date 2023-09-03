@@ -150,4 +150,4 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
 // 👀 280. Review: Writing Clean and Modern JavaScript
-// test after clone
+// test after clone.
